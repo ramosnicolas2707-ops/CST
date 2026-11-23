@@ -9,6 +9,8 @@ Todo dato o decisión que falta. Cada `[PENDIENTE: …]` del código debe estar 
 | 1 | Comprar el dominio nuevo. **Nico decidió esperar** (23-nov-2026): el sitio sigue en `estudionovaweb.com` y la Fase 1 queda en pausa | Fase 1 | 23-nov-2026 |
 | 3 | ¿Se conserva la versión en inglés (`/en`)? | Fase 4 | 23-nov-2026 |
 | 4 | Logo: Nico propuso **una sola línea continua que une C → S → T** (la C conecta abajo con la S, la S conecta arriba con la T), pensada para animarse dibujándose. Reemplaza al logo «Señal». Definir si la Fase 3B explora solo variaciones de esta idea | Fase 3 | 23-nov-2026 |
+| 7 | Borrar el logo «Señal» (`Logo.tsx`, `icon.svg`, `Marketing/cst/logo/`): se hace al reemplazarlo por el logo nuevo, no antes, porque el sitio lo usa | Fase 3C | 23-nov-2026 |
+| 8 | Favicon: a 16 px ninguna variación se lee entera. Hará falta una versión compacta (pista: 03 Gruesa o 09 Monograma) | Fase 3C | 23-nov-2026 |
 | 5 | Servicios definitivos: hoy el sitio tiene "Rediseño" y no tiene "Automatizaciones y CRM" ni "Software a medida" | Fase 4 | 23-nov-2026 |
 | 6 | Nombre del repo renombrado (propuesta `cst-web`) | Fase 2 | 23-nov-2026 |
 
