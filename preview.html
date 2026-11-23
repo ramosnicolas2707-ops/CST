@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rutas de marca CST</title>
+<meta name="description" content="Tres rutas visuales para la marca CST – Centro de Soluciones Tecnológicas: color, tipografía, sitio web y tarjeta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;700&family=Geist+Mono:wght@500&family=Geist:wght@400;500;600&family=Instrument+Sans:wght@400;600&family=Unbounded:wght@600;700&display=swap">
+<style>
+/* Layout: cabecera neutra + tres columnas de ruta (una sola columna en celular), cada ruta con sus propios tokens */
+:root {
+  --page-bg: #F6F6F4;
+  --page-fg: #1D1E21;
+  --page-muted: #5D6068;
+  --page-line: #DCDDE0;
+  --page-chip: #FFFFFF;
+  --ok: #17703F;
+  --bad: #B3261E;
+  --chrome: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page-bg: #131416; --page-fg: #ECEDEF; --page-muted: #A3A6AD;
+    --page-line: #2C2E33; --page-chip: #1C1D21; --ok: #5FD38F; --bad: #FF8A80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page-bg: #131416; --page-fg: #ECEDEF; --page-muted: #A3A6AD;
+  --page-line: #2C2E33; --page-chip: #1C1D21; --ok: #5FD38F; --bad: #FF8A80;
+  color-scheme: dark;
+}
+
+/* Tokens por ruta: modo claro por defecto, modo oscuro con el interruptor */
+.ruta-a {
+  --bg: #F4F6FF; --surface: #FFFFFF; --text: #0B1B3F; --muted: #5B6680;
+  --primary: #2F5BFF; --on-primary: #FFFFFF; --secondary: #12C7E8; --accent: #FFC21A; --link: #2F5BFF;
+  --line: #DCE2F7;
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --body: "Instrument Sans", "Segoe UI", sans-serif;
+}
+.ruta-b {
+  --bg: #FFF5F2; --surface: #FFFFFF; --text: #2B1035; --muted: #6E5A73;
+  --primary: #D3195F; --on-primary: #FFFFFF; --secondary: #FF7A1A; --accent: #FFD23F; --link: #D3195F;
+  --line: #F3DCD6;
+  --display: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --body: "Figtree", "Segoe UI", sans-serif;
+}
+.ruta-c {
+  --bg: #FFFFFF; --surface: #F3F4F6; --text: #16181D; --muted: #5E6470;
+  --primary: #16181D; --on-primary: #FFFFFF; --secondary: #E7E9ED; --accent: #00B074; --link: #007A4F;
+  --line: #E7E9ED;
+  --display: "Geist", "Segoe UI", sans-serif;
+  --body: "Geist", "Segoe UI", sans-serif;
+}
+.oscuro .ruta-a {
+  --bg: #0A1330; --surface: #142049; --text: #EEF2FF; --muted: #A3AECB;
+  --primary: #6B8CFF; --on-primary: #0A1330; --secondary: #3DD8F2; --link: #6B8CFF; --line: #23306A;
+}
+.oscuro .ruta-b {
+  --bg: #1C0B24; --surface: #2C1438; --text: #FFF1F5; --muted: #C2AFC7;
+  --primary: #FF5C93; --on-primary: #1C0B24; --secondary: #FF9A4D; --link: #FF5C93; --line: #3F2150;
+}
+.oscuro .ruta-c {
+  --bg: #0E0F12; --surface: #1A1C21; --text: #F2F3F5; --muted: #A2A7B2;
+  --primary: #F2F3F5; --on-primary: #0E0F12; --secondary: #1A1C21; --accent: #2EDB94; --link: #2EDB94; --line: #2A2D33;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  font: 400 1rem/1.5 var(--chrome);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Cabecera */
+.intro { padding-block: 40px 24px; display: grid; gap: 20px; }
+.intro h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+.intro p { margin: 0; max-width: 62ch; color: var(--page-muted); text-wrap: pretty; }
+.controles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn-chrome {
+  font: 600 0.9375rem/1 var(--chrome);
+  min-height: 44px; padding: 0 18px;
+  border-radius: 999px; border: 1px solid var(--page-line);
+  background: var(--page-chip); color: var(--page-fg); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.btn-chrome[aria-pressed="true"] { background: var(--page-fg); color: var(--page-bg); border-color: var(--page-fg); }
+.btn-chrome:focus-visible, .ruta a:focus-visible, .ruta button:focus-visible { outline: 3px solid var(--page-fg); outline-offset: 3px; }
+.saltos { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--page-bg); padding-block: 10px; border-bottom: 1px solid var(--page-line); }
+.saltos .controles { justify-content: flex-start; }
+@media (min-width: 1180px) { .saltos { position: static; border: 0; padding-block: 0 8px; } .saltos .solo-movil { display: none; } }
+
+/* Grilla de rutas */
+.rutas { display: grid; grid-template-columns: 1fr; gap: 24px; padding-block: 16px 48px; max-width: 560px; margin-inline: auto; }
+@media (min-width: 1180px) { .rutas { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; } }
+
+.ruta {
+  min-width: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  scroll-margin-top: 72px;
+  transition: background-color .25s cubic-bezier(.2,.7,.2,1), color .25s cubic-bezier(.2,.7,.2,1);
+}
+.ruta > section { padding: 24px 20px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.ruta > section:first-child { border-top: 0; }
+.ruta h2.nombre { margin: 0; font-family: var(--display); font-size: 1.625rem; line-height: 1.15; letter-spacing: -0.01em; }
+.ruta h3 { margin: 0; font: 600 0.875rem/1.3 var(--chrome); color: var(--muted); letter-spacing: 0.01em; }
+.ruta .lead { margin: 0; line-height: 1.55; text-wrap: pretty; }
+.adjetivos { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.adjetivos li { font: 600 0.8125rem/1 var(--body); padding: 7px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.tipo-logo { font: 500 0.8125rem/1.4 var(--chrome); color: var(--muted); margin: 0; }
+
+/* Logo grande y avatares */
+.escenario { background: var(--surface); border-radius: 14px; padding: 28px 16px; display: grid; place-items: center; min-height: 150px; }
+.avatares { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.avatar { border-radius: 50%; display: grid; place-items: center; overflow: hidden; flex: none; }
+.avatar.g { width: 72px; height: 72px; }
+.avatar.p { width: 40px; height: 40px; }
+.avatares small { font: 400 0.8125rem/1.4 var(--chrome); color: var(--muted); }
+
+/* Logos */
+.logo-a { display: inline-flex; align-items: center; gap: 12px; color: var(--text); }
+.logo-a .palabra { display: grid; gap: 4px; }
+.logo-a .sigla { font: 700 2.5rem/1 "Unbounded", "Arial Black", sans-serif; letter-spacing: 0.04em; }
+.logo-a .completo { font: 400 0.6875rem/1.2 "Instrument Sans", sans-serif; letter-spacing: 0.02em; color: var(--muted); }
+.logo-b { display: inline-grid; gap: 6px; justify-items: start; color: var(--text); }
+.logo-b .bloque { position: relative; font: 800 3.5rem/0.9 "Bricolage Grotesque", "Arial Black", sans-serif; letter-spacing: -0.05em; padding-top: 0.22em; }
+.logo-b .bloque::before { content: ""; position: absolute; left: 0.02em; right: 0.02em; top: 0; height: 0.12em; border-radius: 0.06em; background: var(--primary); }
+.logo-b .completo { font: 700 0.6875rem/1.2 "Figtree", sans-serif; color: var(--muted); }
+.logo-c { display: inline-grid; gap: 8px; justify-items: center; color: var(--text); }
+.logo-c svg { width: 150px; height: auto; }
+.logo-c .completo { font: 500 0.6875rem/1.2 "Geist", sans-serif; color: var(--muted); letter-spacing: 0.01em; }
+
+/* Paleta */
+.muestras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.muestra { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.muestra .color { height: 64px; }
+.muestra .info { padding: 10px 12px; display: grid; gap: 2px; min-width: 0; }
+.muestra b { font: 600 0.875rem/1.3 var(--body); }
+.muestra span { font: 400 0.75rem/1.4 var(--chrome); color: var(--muted); }
+.muestra code { font: 500 0.8125rem/1.4 "Geist Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.proporcion { display: flex; height: 18px; border-radius: 999px; overflow: hidden; border: 1px solid var(--line); }
+.proporcion div { height: 100%; }
+.proporcion-leyenda { margin: 0; font: 400 0.8125rem/1.4 var(--chrome); color: var(--muted); }
+.contrastes { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.contrastes li { display: flex; align-items: center; gap: 10px; font: 400 0.8125rem/1.3 var(--chrome); }
+.contrastes .par { flex: none; width: 46px; height: 28px; border-radius: 6px; display: grid; place-items: center; font: 700 0.875rem/1 var(--body); border: 1px solid var(--line); }
+.contrastes .desc { flex: 1; min-width: 0; }
+.contrastes .ratio { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.contrastes .ratio.si { color: var(--ok); }
+.contrastes .ratio.no { color: var(--bad); }
+.ruta .contrastes .ratio.si, .ruta .contrastes .ratio.no { background: var(--page-chip); padding: 3px 7px; border-radius: 6px; }
+
+/* Tipografía */
+.especimen { display: grid; gap: 16px; }
+.especimen .fila { display: grid; gap: 4px; min-width: 0; }
+.especimen .meta { font: 400 0.75rem/1.3 var(--chrome); color: var(--muted); }
+.especimen .h1 { font-family: var(--display); line-height: 1.1; overflow-wrap: anywhere; }
+.especimen .h2 { font-family: var(--display); line-height: 1.2; }
+.especimen .p { font: 400 1.0625rem/1.6 var(--body); max-width: 60ch; margin: 0; }
+.ruta-a .h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.ruta-a .h2 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.01em; }
+.ruta-b .h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+.ruta-b .h2 { font-size: 1.75rem; font-weight: 700; line-height: 1.15; }
+.ruta-c .h1 { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.03em; }
+.ruta-c .h2 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+
+/* Botones de cada ruta */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 20px; border-radius: 999px;
+  font: 600 1rem/1 var(--body); text-decoration: none; border: 2px solid transparent;
+  background: var(--primary); color: var(--on-primary); cursor: pointer;
+  transition: transform .2s cubic-bezier(.2,.7,.2,1);
+}
+.boton:active { transform: scale(.98); }
+.boton.sec { background: transparent; color: var(--text); border-color: var(--line); }
+.ruta-a .boton { border-radius: 12px; }
+.ruta-b .boton { font-weight: 700; }
+.ruta-c .boton { font-size: 0.9375rem; font-weight: 500; border-radius: 10px; }
+.ruta-a .boton .led { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+/* Mini hero */
+.navegador { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+.navegador .barra { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.navegador .barra i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.navegador .barra span { margin-left: 8px; font: 400 0.75rem/1 var(--chrome); color: var(--muted); }
+.hero { padding: 18px 18px 22px; display: grid; gap: 14px; }
+.hero nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hero nav ul { display: none; list-style: none; margin: 0; padding: 0; gap: 14px; font: 600 0.8125rem/1 var(--body); }
+@media (min-width: 400px) { .hero nav ul { display: flex; } }
+.hero h4 { margin: 8px 0 0; font-family: var(--display); color: var(--text); text-wrap: balance; }
+.ruta-a .hero h4 { font-size: 1.625rem; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+.ruta-b .hero h4 { font-size: 2rem; font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; }
+.ruta-c .hero h4 { font-size: 1.75rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+.hero p { margin: 0; font-size: 0.9375rem; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.hero .acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero .servicios { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
+.hero .servicios li { font: 600 0.75rem/1 var(--body); padding: 7px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.ruta-a .hero { background: linear-gradient(var(--bg), var(--bg)) padding-box; }
+.ruta-b .hero .banda { margin: 6px -18px -22px; padding: 14px 18px; background: var(--secondary); color: #2B1035; font: 700 0.9375rem/1.3 var(--body); }
+.ruta-c .estado { display: inline-flex; align-items: center; gap: 8px; font: 500 0.75rem/1 "Geist Mono", ui-monospace, monospace; color: var(--muted); }
+.ruta-c .estado i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* Tarjeta de presentación (85 × 55 mm) */
+.tarjetas { display: grid; gap: 12px; }
+.tarjeta { aspect-ratio: 85 / 55; max-width: 100%; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(10, 12, 20, .45); }
+.tarjeta .datos { display: grid; gap: 3px; font-size: 0.75rem; line-height: 1.35; }
+.tarjeta .datos b { font-size: 0.9375rem; font-family: var(--display); font-weight: 700; }
+.tarjeta .pendiente { opacity: .75; font-style: italic; }
+
+.tarjeta.a-frente { background: #2F5BFF; color: #FFFFFF; justify-content: center; align-items: center; }
+.tarjeta.a-reverso { background: #F4F6FF; color: #0B1B3F; border: 1px solid #DCE2F7; }
+.tarjeta.b-frente { background: #D3195F; color: #FFF5F2; justify-content: center; align-items: center; }
+.tarjeta.b-reverso { background: #FFF5F2; color: #2B1035; border: 1px solid #F3DCD6; }
+.tarjeta.b-reverso::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #FFD23F; }
+.tarjeta.c-frente { background: #16181D; color: #F2F3F5; justify-content: center; align-items: center; }
+.tarjeta.c-reverso { background: #16181D; color: #E7E9ED; }
+.tarjeta.c-reverso .datos b { color: #FFFFFF; }
+
+/* Firma de correo */
+.firma { display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: 0.8125rem; line-height: 1.4; min-width: 0; }
+.firma .t { min-width: 0; }
+.firma b { display: block; font-size: 0.9375rem; }
+.firma span { color: var(--muted); display: block; }
+
+/* Evitar */
+.evitar { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.9375rem; line-height: 1.5; }
+
+/* Comparación y cierre */
+.cierre { padding-block: 8px 64px; display: grid; gap: 24px; }
+.cierre h2 { margin: 0; font-size: 1.5rem; letter-spacing: -0.01em; }
+.tabla-wrap { overflow-x: auto; border: 1px solid var(--page-line); border-radius: 14px; background: var(--page-chip); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.9375rem; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--page-line); vertical-align: top; }
+thead th { font-weight: 600; color: var(--page-muted); font-size: 0.8125rem; }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+tbody th { font-weight: 600; white-space: nowrap; }
+.puntos { letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+.recomendacion { display: grid; gap: 10px; padding: 20px; border-radius: 16px; background: #2F5BFF; color: #FFFFFF; max-width: 780px; }
+.recomendacion h2 { color: #FFFFFF; }
+.recomendacion p { margin: 0; line-height: 1.6; }
+.preguntas { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; max-width: 72ch; line-height: 1.55; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="wrap intro">
+  <h1>Tres caminos para la marca CST</h1>
+  <p>Centro de Soluciones Tecnológicas · Bogotá. Cada columna es una ruta completa: logo, color, letra, cómo se vería el sitio web y una tarjeta. Compáralas, prueba el modo oscuro y anota qué te gusta de cada una.</p>
+</header>
+
+<div class="saltos">
+  <div class="wrap controles">
+    <button type="button" class="btn-chrome" id="modo" aria-pressed="false">Ver en modo oscuro</button>
+    <a class="btn-chrome solo-movil" href="#ruta-a">A · Señal</a>
+    <a class="btn-chrome solo-movil" href="#ruta-b">B · Pulso</a>
+    <a class="btn-chrome solo-movil" href="#ruta-c">C · Grafito</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="rutas" id="rutas"></div>
+</main>
+
+<section class="wrap cierre" aria-labelledby="comp">
+  <h2 id="comp">Comparación</h2>
+  <div class="tabla-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">A · Señal</th><th scope="col">B · Pulso</th><th scope="col">C · Grafito</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Sensación</th><td>Tecnológica con energía</td><td>Creativa y atrevida</td><td>Premium y experta</td></tr>
+        <tr><th scope="row">Logo</th><td>Imagotipo</td><td>Logotipo</td><td>Isologo</td></tr>
+        <tr><th scope="row">Llama la atención</th><td>Alto</td><td>Muy alto</td><td>Medio</td></tr>
+        <tr><th scope="row">Confiable</th><td class="puntos" aria-label="4 de 5">●●●●○</td><td class="puntos" aria-label="3 de 5">●●●○○</td><td class="puntos" aria-label="5 de 5">●●●●●</td></tr>
+        <tr><th scope="row">Experto y técnico</th><td class="puntos" aria-label="4 de 5">●●●●○</td><td class="puntos" aria-label="2 de 5">●●○○○</td><td class="puntos" aria-label="5 de 5">●●●●●</td></tr>
+        <tr><th scope="row">Creativo</th><td class="puntos" aria-label="3 de 5">●●●○○</td><td class="puntos" aria-label="5 de 5">●●●●●</td><td class="puntos" aria-label="2 de 5">●●○○○</td></tr>
+        <tr><th scope="row">Moderno</th><td class="puntos" aria-label="5 de 5">●●●●●</td><td class="puntos" aria-label="4 de 5">●●●●○</td><td class="puntos" aria-label="4 de 5">●●●●○</td></tr>
+        <tr><th scope="row">Se lee a 40 px</th><td>Muy bien</td><td>Muy bien</td><td>Regular</td></tr>
+        <tr><th scope="row">Riesgo</th><td>Verse genérica si se pierde el amarillo</td><td>Verse poco profesional</td><td>Verse fría</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="recomendacion">
+    <h2>Recomendada: Ruta A · Señal</h2>
+    <p>Cubre las cinco palabras que elegiste sin sacrificar ninguna. El azul da lo confiable y técnico, la letra ancha lo moderno y el punto amarillo lo llamativo. Además, su símbolo es el que mejor se reconoce en un perfil de redes pequeño.</p>
+  </div>
+
+  <h2>Preguntas para decidir o mezclar</h2>
+  <ol class="preguntas">
+    <li>¿Qué te llamó la atención primero de cada ruta: el color, la letra o el logo?</li>
+    <li>Si solo pudieras quedarte con un color de toda la página, ¿cuál sería?</li>
+    <li>¿Qué título te gustó más leer: el ancho de A, el de carácter de B o el limpio de C?</li>
+    <li>¿Qué perfil de redes reconoces más rápido en tamaño pequeño?</li>
+    <li>¿La tarjeta de qué ruta le entregarías a una academia? ¿Y a un club deportivo?</li>
+    <li>¿Algo te incomoda en alguna ruta, aunque te guste el resto?</li>
+    <li>En modo oscuro, ¿cambió tu favorita?</li>
+    <li>¿Prefieres un símbolo separable (A), solo letras (B) o letras dentro del símbolo (C)?</li>
+  </ol>
+</section>
+
+<script>
+(function () {
+  // Datos personales tomados del sitio actual. Correo y web quedan pendientes: CST aún no tiene dominio.
+  var persona = { nombre: "Nicolás Ramos Murcia", cargo: "Desarrollador y fundador", tel: "+57 312 344 5330", ciudad: "Bogotá" };
+  var servicios = ["Desarrollo web", "Mantenimiento", "Software a la medida", "Soporte"];
+
+  function simboloA(trazo, punto, tam) {
+    return '<svg width="' + tam + '" height="' + tam + '" viewBox="0 0 48 48" aria-hidden="true">' +
+      '<path d="M25 7H16a9 9 0 0 0-9 9v16a9 9 0 0 0 9 9h16a9 9 0 0 0 9-9V23" fill="none" stroke="' + trazo + '" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<circle cx="38.364" cy="9.636" r="5.5" fill="' + punto + '"/></svg>';
+  }
+  function chipC(trazo, pin, tam, conPatas) {
+    var patas = "";
+    if (conPatas) {
+      [20, 32, 44].forEach(function (y) {
+        patas += '<line x1="4" y1="' + y + '" x2="13" y2="' + y + '" stroke="' + pin + '" stroke-width="3.5" stroke-linecap="round"/>' +
+                 '<line x1="107" y1="' + y + '" x2="116" y2="' + y + '" stroke="' + pin + '" stroke-width="3.5" stroke-linecap="round"/>';
+      });
+    }
+    return '<svg width="' + tam + '" viewBox="0 0 120 64" aria-hidden="true">' + patas +
+      '<rect x="14" y="6" width="92" height="52" rx="11" fill="none" stroke="' + trazo + '" stroke-width="3"/>' +
+      '<text x="60" y="41.5" text-anchor="middle" font-family="Geist, Segoe UI, sans-serif" font-weight="600" font-size="26" letter-spacing="1" fill="' + trazo + '">CST</text></svg>';
+  }
+
+  var rutas = [
+    {
+      id: "ruta-a", clase: "ruta-a", nombre: "A · Señal", subtitulo: "Moderna y tecnológica",
+      concepto: "CST es la señal que se enciende cuando algo funciona. Azul eléctrico para la confianza técnica y un punto amarillo para la energía.",
+      adjetivos: ["Preciso", "Enérgico", "Confiable"],
+      tipoLogo: "Imagotipo: símbolo + sigla, también funcionan por separado.",
+      logo: function () {
+        return '<div class="logo-a">' + simboloA("var(--primary)", "#FFC21A", 56) +
+          '<div class="palabra"><span class="sigla">CST</span><span class="completo">Centro de Soluciones Tecnológicas</span></div></div>';
+      },
+      avatar: function (t) { return '<div class="avatar ' + t + '" style="background:#2F5BFF">' + simboloA("#FFFFFF", "#FFC21A", t === "g" ? 40 : 24) + '</div>'; },
+      colores: [
+        ["Azul Señal", "Primario", "#2F5BFF", "47, 91, 255"],
+        ["Cian Fibra", "Secundario", "#12C7E8", "18, 199, 232"],
+        ["Amarillo Chispa", "Acento", "#FFC21A", "255, 194, 26"],
+        ["Niebla", "Fondo", "#F4F6FF", "244, 246, 255"],
+        ["Tinta", "Texto", "#0B1B3F", "11, 27, 63"],
+        ["Gris Cable", "Neutro", "#5B6680", "91, 102, 128"]
+      ],
+      oscuro: [["Fondo", "#0A1330"], ["Superficie", "#142049"], ["Texto", "#EEF2FF"], ["Azul", "#6B8CFF"], ["Cian", "#3DD8F2"], ["Gris", "#A3AECB"]],
+      proporcion: [["#F4F6FF", 60], ["#0B1B3F", 18], ["#2F5BFF", 12], ["#12C7E8", 5], ["#FFC21A", 5]],
+      leyenda: "60 % Niebla · 30 % Tinta y Azul · 10 % Cian y Amarillo",
+      contrastes: [
+        ["#0B1B3F", "#F4F6FF", "Tinta sobre Niebla", 15.7],
+        ["#FFFFFF", "#2F5BFF", "Blanco sobre Azul (botones)", 5.2],
+        ["#2F5BFF", "#F4F6FF", "Azul sobre Niebla (enlaces)", 4.8],
+        ["#0B1B3F", "#FFC21A", "Tinta sobre Amarillo", 10.5],
+        ["#FFC21A", "#F4F6FF", "Amarillo sobre Niebla", 1.5],
+        ["#12C7E8", "#F4F6FF", "Cian sobre Niebla", 1.9]
+      ],
+      fuentes: ["Unbounded", "Instrument Sans"],
+      tipo: [["H1", "Unbounded 700 · 36 → 56 px", "Tu web, lista"], ["H2", "Unbounded 600 · 28 → 36 px", "Soporte que responde"]],
+      parrafo: "Instrument Sans 400 · 17 px · interlineado 1.6",
+      boton: "Instrument Sans 600 · 16 px",
+      hero: {
+        h: "Tu negocio en línea, funcionando todos los días.",
+        p: "Desarrollo web, mantenimiento, software a la medida y soporte tecnológico para negocios en Bogotá.",
+        cta: "Cotiza tu proyecto", cta2: "Ver servicios"
+      },
+      frente: function () { return '<div class="logo-a" style="color:#FFFFFF">' + simboloA("#FFFFFF", "#FFC21A", 44) + '<div class="palabra"><span class="sigla" style="font-size:2rem">CST</span></div></div>'; },
+      firmaLogo: function () { return simboloA("var(--primary)", "#FFC21A", 32); },
+      evitar: ["Degradados de azul a morado", "Amarillo como color de texto", "Los cuatro colores en una misma pieza", "Circuitos, globos terráqueos o engranajes en el logo"]
+    },
+    {
+      id: "ruta-b", clase: "ruta-b", nombre: "B · Pulso", subtitulo: "Vibrante y creativa",
+      concepto: "CST como un estudio con actitud. Colores cálidos y saturados que hablan el idioma de perfumerías, academias y clubes.",
+      adjetivos: ["Creativo", "Cercano", "Atrevido"],
+      tipoLogo: "Logotipo: solo letras. Una barra hace de techo sobre CST, la idea de «centro».",
+      logo: function () { return '<div class="logo-b"><span class="bloque">CST</span><span class="completo">Centro de Soluciones Tecnológicas</span></div>'; },
+      avatar: function (t) {
+        var fs = t === "g" ? "1.5rem" : "0.8125rem";
+        return '<div class="avatar ' + t + '" style="background:#D3195F;color:#FFF5F2;font:800 ' + fs + '/1 \'Bricolage Grotesque\',sans-serif;letter-spacing:-0.05em">CST</div>';
+      },
+      colores: [
+        ["Fucsia Pulso", "Primario", "#D3195F", "211, 25, 95"],
+        ["Mandarina", "Secundario", "#FF7A1A", "255, 122, 26"],
+        ["Sol", "Acento", "#FFD23F", "255, 210, 63"],
+        ["Rubor", "Fondo", "#FFF5F2", "255, 245, 242"],
+        ["Ciruela", "Texto", "#2B1035", "43, 16, 53"],
+        ["Lavanda Gris", "Neutro", "#6E5A73", "110, 90, 115"]
+      ],
+      oscuro: [["Fondo", "#1C0B24"], ["Superficie", "#2C1438"], ["Texto", "#FFF1F5"], ["Fucsia", "#FF5C93"], ["Mandarina", "#FF9A4D"], ["Gris", "#C2AFC7"]],
+      proporcion: [["#FFF5F2", 60], ["#2B1035", 25], ["#D3195F", 10], ["#FF7A1A", 3], ["#FFD23F", 2]],
+      leyenda: "60 % Rubor · 25 % Ciruela · 10 % Fucsia · 5 % Mandarina y Sol",
+      contrastes: [
+        ["#2B1035", "#FFF5F2", "Ciruela sobre Rubor", 16.0],
+        ["#FFFFFF", "#D3195F", "Blanco sobre Fucsia (botones)", 5.2],
+        ["#D3195F", "#FFF5F2", "Fucsia sobre Rubor (enlaces)", 4.8],
+        ["#2B1035", "#FF7A1A", "Ciruela sobre Mandarina", 6.6],
+        ["#FF7A1A", "#FFF5F2", "Mandarina sobre Rubor", 2.4],
+        ["#D3195F", "#FF7A1A", "Fucsia sobre Mandarina", 1.8]
+      ],
+      fuentes: ["Bricolage Grotesque", "Figtree"],
+      tipo: [["H1", "Bricolage Grotesque 800 · 40 → 64 px", "Tu web, lista"], ["H2", "Bricolage Grotesque 700 · 28 → 40 px", "Soporte que responde"]],
+      parrafo: "Figtree 400 · 17 px · interlineado 1.6",
+      boton: "Figtree 700 · 16 px",
+      hero: {
+        h: "Una web a la altura de tu marca.",
+        p: "Diseñamos, construimos y cuidamos el sitio de tu academia, tienda o club, y te damos soporte cuando lo necesites.",
+        cta: "Escríbenos por WhatsApp", cta2: "Ver servicios",
+        banda: "Desarrollo web · Mantenimiento · Software a la medida · Soporte"
+      },
+      frente: function () { return '<div class="logo-b" style="color:#FFF5F2;--primary:#FFF5F2"><span class="bloque" style="font-size:2.75rem">CST</span></div>'; },
+      firmaLogo: function () { return '<div class="avatar p" style="background:#D3195F;color:#FFF5F2;font:800 0.8125rem/1 \'Bricolage Grotesque\',sans-serif;letter-spacing:-0.05em;border-radius:10px">CST</div>'; },
+      evitar: ["Los tres colores cálidos al mismo nivel", "Degradados tipo Instagram", "Ilustraciones infantiles", "Un tono tan juguetón que se pierda lo experto"]
+    },
+    {
+      id: "ruta-c", clase: "ruta-c", nombre: "C · Grafito", subtitulo: "Sobria y experta",
+      concepto: "CST como un estudio de precisión: mucho espacio, pocos elementos y todo bien hecho. Un solo color vivo, esmeralda, que dice «funciona».",
+      adjetivos: ["Experto", "Exacto", "Sereno"],
+      tipoLogo: "Isologo: la sigla vive dentro de un chip; no se separan.",
+      logo: function () { return '<div class="logo-c">' + chipC("var(--text)", "var(--accent)", 150, true) + '<span class="completo">Centro de Soluciones Tecnológicas</span></div>'; },
+      avatar: function (t) { return '<div class="avatar ' + t + '" style="background:#16181D">' + chipC("#FFFFFF", "#2EDB94", t === "g" ? 56 : 32, t === "g") + '</div>'; },
+      colores: [
+        ["Grafito", "Primario", "#16181D", "22, 24, 29"],
+        ["Plata", "Secundario", "#E7E9ED", "231, 233, 237"],
+        ["Esmeralda", "Acento", "#00B074", "0, 176, 116"],
+        ["Esmeralda Profundo", "Acento en texto", "#007A4F", "0, 122, 79"],
+        ["Blanco", "Fondo", "#FFFFFF", "255, 255, 255"],
+        ["Gris Carcasa", "Neutro", "#5E6470", "94, 100, 112"]
+      ],
+      oscuro: [["Fondo", "#0E0F12"], ["Superficie", "#1A1C21"], ["Texto", "#F2F3F5"], ["Esmeralda", "#2EDB94"], ["Gris", "#A2A7B2"], ["Plata", "#E7E9ED"]],
+      proporcion: [["#FFFFFF", 55], ["#E7E9ED", 15], ["#16181D", 25], ["#00B074", 5]],
+      leyenda: "70 % Blanco y Plata · 25 % Grafito · 5 % Esmeralda",
+      contrastes: [
+        ["#16181D", "#FFFFFF", "Grafito sobre Blanco", 17.8],
+        ["#16181D", "#00B074", "Grafito sobre Esmeralda (botones verdes)", 6.3],
+        ["#007A4F", "#FFFFFF", "Esmeralda Profundo sobre Blanco (enlaces)", 5.4],
+        ["#5E6470", "#FFFFFF", "Gris Carcasa sobre Blanco", 5.9],
+        ["#00B074", "#FFFFFF", "Esmeralda sobre Blanco", 2.8],
+        ["#FFFFFF", "#00B074", "Blanco sobre Esmeralda", 2.8]
+      ],
+      fuentes: ["Geist", "Geist Mono"],
+      tipo: [["H1", "Geist 600 · 36 → 60 px · −0.03 em", "Tu web, lista"], ["H2", "Geist 600 · 28 → 36 px", "Soporte que responde"]],
+      parrafo: "Geist 400 · 17 px · interlineado 1.6",
+      boton: "Geist 500 · 15 px",
+      hero: {
+        h: "Sitios web y software que funcionan sin que tengas que pensar en ellos.",
+        p: "Desarrollo web, mantenimiento, software a la medida y soporte tecnológico en Bogotá.",
+        cta: "Cuéntanos tu proyecto", cta2: "Ver servicios", estado: "sitio en línea"
+      },
+      frente: function () { return chipC("#FFFFFF", "#2EDB94", 130, true); },
+      firmaLogo: function () { return chipC("var(--text)", "var(--accent)", 56, true); },
+      evitar: ["Usar el verde en todas partes", "Negro con verde ácido, la estética «hacker» repetida", "Frialdad sin fotos reales de tu trabajo", "Recordar: es la ruta menos llamativa"]
+    }
+  ];
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+
+  function muestras(r) {
+    return r.colores.map(function (c) {
+      return '<div class="muestra"><div class="color" style="background:' + c[2] + '"></div><div class="info">' +
+        '<b>' + esc(c[0]) + '</b><span>' + esc(c[1]) + '</span><code>' + c[2] + '</code><span>RGB ' + c[3] + '</span></div></div>';
+    }).join("");
+  }
+  function muestrasOscuro(r) {
+    return r.oscuro.map(function (c) {
+      return '<div class="muestra"><div class="color" style="background:' + c[1] + ';height:40px"></div><div class="info"><b>' + esc(c[0]) + '</b><code>' + c[1] + '</code></div></div>';
+    }).join("");
+  }
+  function contrastes(r) {
+    return r.contrastes.map(function (c) {
+      var pasa = c[3] >= 4.5, grande = !pasa && c[3] >= 3;
+      var etiqueta = pasa ? "Pasa AA" : grande ? "Solo texto grande" : "No usar";
+      return '<li><span class="par" style="color:' + c[0] + ';background:' + c[1] + '" aria-hidden="true">Aa</span>' +
+        '<span class="desc">' + esc(c[2]) + '</span><span class="ratio ' + (pasa ? "si" : "no") + '">' + c[3].toFixed(1) + ' · ' + etiqueta + '</span></li>';
+    }).join("");
+  }
+
+  var html = rutas.map(function (r) {
+    var h = r.hero;
+    return '<article class="ruta ' + r.clase + '" id="' + r.id + '" aria-labelledby="' + r.id + '-t">' +
+      '<section>' +
+        '<h2 class="nombre" id="' + r.id + '-t">' + esc(r.nombre) + '</h2>' +
+        '<p class="lead"><strong>' + esc(r.subtitulo) + '.</strong> ' + esc(r.concepto) + '</p>' +
+        '<ul class="adjetivos">' + r.adjetivos.map(function (a) { return '<li>' + a + '</li>'; }).join("") + '</ul>' +
+      '</section>' +
+      '<section aria-label="Logo">' +
+        '<h3>Logo (boceto de dirección, no es el logo final)</h3>' +
+        '<div class="escenario">' + r.logo() + '</div>' +
+        '<p class="tipo-logo">' + esc(r.tipoLogo) + '</p>' +
+        '<div class="avatares">' + r.avatar("g") + r.avatar("p") + '<small>Perfil de redes a 72 px y 40 px</small></div>' +
+      '</section>' +
+      '<section aria-label="Paleta">' +
+        '<h3>Paleta</h3><div class="muestras">' + muestras(r) + '</div>' +
+        '<div class="proporcion" role="img" aria-label="Proporción de uso: ' + esc(r.leyenda) + '">' +
+          r.proporcion.map(function (p) { return '<div style="background:' + p[0] + ';flex:' + p[1] + '"></div>'; }).join("") +
+        '</div><p class="proporcion-leyenda">' + esc(r.leyenda) + '</p>' +
+        '<h3>Modo oscuro</h3><div class="muestras">' + muestrasOscuro(r) + '</div>' +
+        '<h3>Contraste (WCAG AA pide 4.5 en texto normal)</h3><ul class="contrastes">' + contrastes(r) + '</ul>' +
+      '</section>' +
+      '<section aria-label="Tipografía">' +
+        '<h3>Tipografía: ' + esc(r.fuentes[0]) + ' + ' + esc(r.fuentes[1]) + '</h3>' +
+        '<div class="especimen">' +
+          r.tipo.map(function (t) { return '<div class="fila"><span class="meta">' + t[0] + ' · ' + esc(t[1]) + '</span><span class="' + t[0].toLowerCase() + '">' + esc(t[2]) + '</span></div>'; }).join("") +
+          '<div class="fila"><span class="meta">Párrafo · ' + esc(r.parrafo) + '</span><p class="p">Hacemos sitios que cargan rápido, se ven bien en el celular y que tú mismo puedes actualizar.</p></div>' +
+          '<div class="fila"><span class="meta">Botón · ' + esc(r.boton) + '</span><div><a class="boton" href="#' + r.id + '">' + (r.clase === "ruta-a" ? '<span class="led" aria-hidden="true"></span>' : '') + 'Cotiza tu proyecto</a></div></div>' +
+        '</div>' +
+      '</section>' +
+      '<section aria-label="Sitio web">' +
+        '<h3>Así se vería el inicio del sitio</h3>' +
+        '<div class="navegador"><div class="barra"><i></i><i></i><i></i><span>dominio de CST por definir</span></div>' +
+          '<div class="hero">' +
+            '<nav aria-label="Ejemplo de menú">' + r.firmaLogo() + '<ul><li>Servicios</li><li>Proyectos</li><li>Contacto</li></ul></nav>' +
+            (h.estado ? '<span class="estado"><i aria-hidden="true"></i>' + esc(h.estado) + ' (ejemplo)</span>' : '') +
+            '<h4>' + esc(h.h) + '</h4>' +
+            '<p>' + esc(h.p) + '</p>' +
+            '<div class="acciones"><a class="boton" href="#' + r.id + '">' + (r.clase === "ruta-a" ? '<span class="led" aria-hidden="true"></span>' : '') + esc(h.cta) + '</a><a class="boton sec" href="#' + r.id + '">' + esc(h.cta2) + '</a></div>' +
+            (h.banda ? '<div class="banda">' + esc(h.banda) + '</div>' : '<ul class="servicios">' + servicios.map(function (s) { return '<li>' + s + '</li>'; }).join("") + '</ul>') +
+          '</div></div>' +
+      '</section>' +
+      '<section aria-label="Tarjeta de presentación">' +
+        '<h3>Tarjeta de presentación (85 × 55 mm)</h3>' +
+        '<div class="tarjetas">' +
+          '<div class="tarjeta ' + r.clase.slice(-1) + '-frente" role="img" aria-label="Frente de la tarjeta">' + r.frente() + '</div>' +
+          '<div class="tarjeta ' + r.clase.slice(-1) + '-reverso">' +
+            '<div style="font:700 0.75rem/1 var(--display);letter-spacing:0.02em">CST · Centro de Soluciones Tecnológicas</div>' +
+            '<div class="datos"><b>' + persona.nombre + '</b><span>' + persona.cargo + '</span><span>' + persona.tel + ' · ' + persona.ciudad + '</span><span class="pendiente">correo y web: por definir</span></div>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+      '<section aria-label="Firma de correo">' +
+        '<h3>Firma de correo</h3>' +
+        '<div class="firma">' + r.firmaLogo() + '<div class="t"><b>' + persona.nombre + '</b><span>' + persona.cargo + ' · CST</span><span>' + persona.tel + '</span></div></div>' +
+      '</section>' +
+      '<section aria-label="Qué evitar">' +
+        '<h3>Qué evitar</h3><ul class="evitar">' + r.evitar.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join("") + '</ul>' +
+      '</section>' +
+    '</article>';
+  }).join("");
+
+  document.getElementById("rutas").innerHTML = html;
+
+  var boton = document.getElementById("modo");
+  boton.addEventListener("click", function () {
+    var activo = document.body.classList.toggle("oscuro");
+    boton.setAttribute("aria-pressed", String(activo));
+    boton.textContent = activo ? "Ver en modo claro" : "Ver en modo oscuro";
+  });
+})();
+</script>
+</body>
+</html>
