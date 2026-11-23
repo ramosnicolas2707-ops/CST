@@ -98,8 +98,8 @@ export default function Nav({
                   aria-current={activo ? "page" : undefined}
                   className={`subraya text-[0.9375rem] font-semibold transition-colors ${
                     activo
-                      ? "text-rojo"
-                      : "text-grafito hover:text-tinta"
+                      ? "text-azul"
+                      : "text-gris hover:text-tinta"
                   }`}
                 >
                   {item.label}
@@ -121,7 +121,7 @@ export default function Nav({
               href={whatsapp(t.waGeneral)}
               target="_blank"
               rel="noopener noreferrer"
-              className="barrido ml-1 hidden bg-rojo px-5 py-2.5 text-[0.9375rem] font-bold tracking-tight text-blanco transition-colors duration-300 sm:inline-flex"
+              className="barrido ml-1 hidden bg-azul px-5 py-2.5 text-[0.9375rem] font-bold tracking-tight text-blanco transition-colors duration-300 sm:inline-flex"
             >
               {t.escribeme}
             </a>
@@ -185,11 +185,11 @@ export default function Nav({
               href={whatsapp(t.waGeneral)}
               target="_blank"
               rel="noopener noreferrer"
-              className="barrido mt-8 flex items-center justify-center bg-rojo px-6 py-4 text-base font-bold text-blanco transition-colors duration-300"
+              className="barrido mt-8 flex items-center justify-center bg-azul px-6 py-4 text-base font-bold text-blanco transition-colors duration-300"
             >
               {t.escribemePorWhatsapp}
             </a>
-            <p className="mt-4 text-center text-sm text-grafito">
+            <p className="mt-4 text-center text-sm text-gris">
               {site.contact.whatsappDisplay}
             </p>
           </nav>

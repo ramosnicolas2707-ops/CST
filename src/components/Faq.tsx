@@ -27,19 +27,19 @@ export default function Faq({
             {f.q}
             <span
               aria-hidden="true"
-              className="mt-1 shrink-0 text-2xl font-normal leading-none text-rojo transition-transform duration-300 group-open:rotate-45"
+              className="mt-1 shrink-0 text-2xl font-normal leading-none text-azul transition-transform duration-300 group-open:rotate-45"
             >
               +
             </span>
           </summary>
 
           <div className="max-w-2xl pb-7">
-            <p className="leading-relaxed text-grafito">{f.a}</p>
+            <p className="leading-relaxed text-gris">{f.a}</p>
 
             {f.ir && (
               <Link
                 href={`/${lang}${f.ir.href}`}
-                className="mt-4 inline-flex items-center gap-2 font-bold tracking-tight text-rojo underline decoration-2 underline-offset-4 transition-colors hover:text-tinta"
+                className="mt-4 inline-flex items-center gap-2 font-bold tracking-tight text-azul underline decoration-2 underline-offset-4 transition-colors hover:text-tinta"
               >
                 {f.ir.label}
                 <span aria-hidden="true">→</span>

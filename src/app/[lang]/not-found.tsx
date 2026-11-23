@@ -10,13 +10,13 @@ import { Boton } from "@/components/ui";
 export default function NoEncontrado() {
   return (
     <section className="contenedor flex min-h-[70vh] flex-col justify-center py-32">
-      <p className="cifra text-[clamp(5rem,18vw,11rem)] font-extrabold leading-none tracking-tight text-rojo">
+      <p className="cifra text-[clamp(5rem,18vw,11rem)] font-extrabold leading-none tracking-tight text-azul">
         404
       </p>
-      <h1 className="mt-4 text-[clamp(1.75rem,5vw,3rem)]">
+      <h1 className="mt-4 text-[clamp(1.5rem,4.5vw,2.5rem)]">
         Esta página no existe
       </h1>
-      <p className="mt-5 max-w-md text-lg text-grafito">
+      <p className="mt-5 max-w-md text-lg text-gris">
         O la borré, o el enlace venía mal escrito. Te dejo por dónde seguir.
       </p>
       <div className="mt-9 flex flex-wrap gap-3">

@@ -11,8 +11,8 @@ import type { ReactNode } from "react";
 type BotonProps = {
   href: string;
   children: ReactNode;
-  /** "rojo" es el botón principal. Solo uno por pantalla. */
-  tono?: "rojo" | "negro" | "linea";
+  /** "azul" es el botón principal. Solo uno por pantalla. */
+  tono?: "azul" | "negro" | "linea";
   /** Los enlaces a WhatsApp salen en pestaña nueva. */
   externo?: boolean;
   className?: string;
@@ -24,13 +24,13 @@ type BotonProps = {
  * hacerlo para seguir siendo legible, no porque el color sea el efecto.
  *
  * --color-barrido es lo que entra. El texto va BLANCO todo el tiempo: da
- * 7.4:1 sobre el rojo y 19:1 sobre el negro que entra barriendo.
+ * 5.2:1 sobre el azul y 16.9:1 sobre la tinta que entra barriendo.
  */
 const tonos = {
-  rojo:
-    "barrido bg-rojo text-blanco [--color-barrido:var(--color-tinta)]",
+  azul:
+    "barrido bg-azul text-blanco [--color-barrido:var(--color-tinta)]",
   negro:
-    "barrido bg-tinta text-blanco [--color-barrido:var(--color-rojo)]",
+    "barrido bg-tinta text-blanco [--color-barrido:var(--color-azul)]",
   linea:
     "barrido border border-filete-fuerte text-tinta [--color-barrido:var(--color-tinta)] hover:border-tinta hover:text-blanco",
 } as const;
@@ -38,7 +38,7 @@ const tonos = {
 export function Boton({
   href,
   children,
-  tono = "rojo",
+  tono = "azul",
   externo = false,
   className = "",
 }: BotonProps) {
@@ -77,7 +77,7 @@ export function Antetitulo({
   return (
     <p
       className={`mb-4 text-xs font-bold uppercase tracking-[0.18em] ${
-        sobreOscuro ? "text-rojo-claro" : "text-rojo"
+        sobreOscuro ? "text-azul-claro" : "text-azul"
       }`}
     >
       {children}
@@ -102,11 +102,11 @@ export function TituloSeccion({
       {antetitulo && (
         <Antetitulo sobreOscuro={sobreOscuro}>{antetitulo}</Antetitulo>
       )}
-      <h2 className="text-[clamp(2rem,5vw,3.25rem)]">{titulo}</h2>
+      <h2 className="text-[clamp(1.625rem,4.2vw,2.5rem)]">{titulo}</h2>
       {bajada && (
         <p
           className={`mt-5 text-lg leading-relaxed ${
-            sobreOscuro ? "text-white/70" : "text-grafito"
+            sobreOscuro ? "text-white/70" : "text-gris"
           }`}
         >
           {bajada}
@@ -118,7 +118,7 @@ export function TituloSeccion({
 
 /* ─────────────────────────────────────────────────────────────── Listas ── */
 
-/** Lista con palomita roja. Para lo que sí está incluido. */
+/** Lista con viñeta azul. Para lo que sí está incluido. */
 export function ListaSi({ items }: { items: readonly string[] }) {
   return (
     <ul className="space-y-3">
@@ -126,7 +126,7 @@ export function ListaSi({ items }: { items: readonly string[] }) {
         <li key={item} className="flex gap-3 text-[0.9375rem] leading-relaxed">
           <span
             aria-hidden="true"
-            className="mt-[0.4rem] h-2 w-2 shrink-0 bg-rojo"
+            className="mt-[0.4rem] h-2 w-2 shrink-0 bg-azul"
           />
           <span>{item}</span>
         </li>
@@ -142,11 +142,11 @@ export function ListaNo({ items }: { items: readonly string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-3 text-[0.9375rem] leading-relaxed text-grafito"
+          className="flex gap-3 text-[0.9375rem] leading-relaxed text-gris"
         >
           <span
             aria-hidden="true"
-            className="mt-[0.72rem] h-px w-2 shrink-0 bg-grafito"
+            className="mt-[0.72rem] h-px w-2 shrink-0 bg-gris"
           />
           <span>{item}</span>
         </li>

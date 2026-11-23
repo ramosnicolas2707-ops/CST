@@ -1,4 +1,6 @@
-# NovaWeb
+# CST – Centro de Soluciones Tecnológicas
+
+Antes se llamaba NovaWeb. / Formerly NovaWeb.
 
 > Estudio de desarrollo web en Bogotá, Colombia. Páginas web, tiendas online,
 > rediseños y mantenimiento para negocios de Colombia, Latinoamérica y

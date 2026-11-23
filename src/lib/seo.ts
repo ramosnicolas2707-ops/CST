@@ -105,7 +105,7 @@ export function negocioJsonLd(lang: Idioma) {
  * La ficha del sitio como tal, distinta de la del negocio.
  *
  * Son dos cosas separadas en schema.org y conviene que lo sigan siendo: el
- * negocio es NovaWeb —que existiría igual sin sitio— y el WebSite es este
+ * negocio es CST —que existiría igual sin sitio— y el WebSite es este
  * sitio, que lo publica. Atarlos con `publisher` apuntando al mismo @id le
  * dice a Google que las dos fichas hablan de la misma empresa en vez de
  * tratarlas como dos entidades sueltas que casualmente se llaman igual.

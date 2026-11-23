@@ -48,7 +48,7 @@ export default function SelectorIdioma({
             aria-current={activo ? "true" : undefined}
             title={NOMBRE_IDIOMA[l]}
             className={`px-2 py-1 text-xs font-bold uppercase tracking-wider transition-colors ${
-              activo ? "bg-tinta text-blanco" : "text-grafito hover:text-tinta"
+              activo ? "bg-tinta text-blanco" : "text-gris hover:text-tinta"
             }`}
           >
             {l}

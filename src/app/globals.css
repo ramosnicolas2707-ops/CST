@@ -1,36 +1,37 @@
 /* =============================================================================
-   SISTEMA VISUAL — blanco, rojo, negro
+   SISTEMA VISUAL — CST · Ruta A «Señal»: azul, amarillo, tinta
    =============================================================================
 
-   COLOR. Blanco manda. Rojo señala. Negro sostiene.
+   El brief completo vive en brief-cst.md y el logo en Marketing/cst/logo/.
 
-   El blanco no es un fondo: es el 80% de la página. El rojo aparece solo
-   donde hay que hacer clic o mirar, y el negro carga el peso del texto y de
-   los bloques que tienen que frenar el scroll.
+   COLOR. Blanco manda. Azul señala. Tinta sostiene. Amarillo enciende.
 
-   Es un rojo oscuro, y eso decide dos cosas:
+   El blanco sigue siendo el 80% de la página. El azul aparece donde hay que
+   hacer clic o mirar, la tinta (un azul casi negro) carga el texto y los
+   bloques que frenan el scroll, y el amarillo es el punto del logo: poco y
+   solo donde algo se "enciende".
 
-     --rojo        #b00000. Bloques, botones, líneas y también texto sobre
-                   fondo claro: da 7.4:1 sobre blanco y 6.7:1 sobre nieve.
-     --rojo-claro  #ff4d4d. SOLO sobre los bloques negros (texto y la
-                   diagonal del logo en el pie), donde --rojo se apaga
-                   (2.6:1). Este da 5.9:1 sobre tinta.
+     --azul        #2F5BFF. Bloques, botones, líneas y también texto sobre
+                   fondo claro: 5.2:1 sobre blanco y 4.8:1 sobre niebla.
+     --azul-claro  #7B9AFF. SOLO sobre los bloques de tinta (texto y
+                   antetítulos), donde --azul se apaga (3.3:1). Este da 6.4:1.
+     --amarillo    #FFC21A. Nunca como texto sobre claro (1.6:1). Sobre tinta
+                   sí: 10.5:1.
 
-   Los botones rojos llevan texto BLANCO: da 7.4:1. Negro sobre este rojo
-   da 2.6:1 y no pasa.
+   Los botones azules llevan texto BLANCO: 5.2:1.
 
-   TIPOGRAFÍA. Una sola familia.
+   TIPOGRAFÍA. Dos familias que no se parecen.
 
-   ARCHIVO, y nada más. Es una grotesca de caja ancha con pesos de 400 a 900 y
-   cifras tabulares. Los titulares van en 800/900 con tracking negativo: sobre
-   blanco eso lee como software, no como agencia. Meter una segunda familia
-   solo agregaría carga y ruido.
+   UNBOUNDED para los títulos: ancha y geométrica, la misma del logo. Como es
+   tan ancha, los títulos van más chicos que con la letra anterior y se
+   permiten partir palabras largas en celular antes que salirse de la
+   pantalla.
 
-   Las cifras y los precios usan "tnum": números tabulares que se alinean en
-   columna, para que la tabla de precios no baile.
+   INSTRUMENT SANS para todo lo demás: angosta y clara para leer. Las cifras y
+   los precios usan "tnum": números tabulares que se alinean en columna.
 
    RITMO. La separación entre secciones se hace con aire y con cambio de plano
-   (blanco → nieve → negro). Casi nunca con borde, nunca con sombra.
+   (blanco → niebla → tinta). Casi nunca con borde, nunca con sombra.
    ========================================================================== */
 
 @import "tailwindcss";
@@ -38,20 +39,22 @@
 @theme {
   /* --- Paleta ------------------------------------------------------------ */
   --color-blanco: #ffffff; /* fondo base */
-  --color-nieve: #f5f4f1; /* secciones alternas, superficies */
-  --color-tinta: #0d0d0d; /* texto y bloques oscuros */
-  --color-grafito: #5c5c5c; /* texto secundario — 6.6:1 sobre blanco */
-  --color-rojo: #b00000; /* bloques, botones y texto sobre claro — 7.4:1 con blanco */
-  --color-rojo-claro: #ff4d4d; /* texto rojo sobre tinta — 5.9:1 */
+  --color-niebla: #f4f6ff; /* secciones alternas, superficies */
+  --color-tinta: #0b1b3f; /* texto y bloques oscuros */
+  --color-gris: #5b6680; /* texto secundario — 5.7:1 sobre blanco */
+  --color-azul: #2f5bff; /* bloques, botones y texto sobre claro — 5.2:1 con blanco */
+  --color-azul-claro: #7b9aff; /* texto azul sobre tinta — 6.4:1 */
+  --color-amarillo: #ffc21a; /* el punto del logo; nunca texto sobre claro */
 
   /* Filetes derivados de tinta. No son colores nuevos: son tinta con alfa. */
-  --color-filete: rgb(13 13 13 / 0.1);
-  --color-filete-fuerte: rgb(13 13 13 / 0.22);
+  --color-filete: rgb(11 27 63 / 0.1);
+  --color-filete-fuerte: rgb(11 27 63 / 0.22);
   /* Y su equivalente sobre fondo oscuro. */
   --color-filete-claro: rgb(255 255 255 / 0.16);
 
   /* --- Tipografía -------------------------------------------------------- */
   --font-sans: var(--fuente), ui-sans-serif, system-ui, sans-serif;
+  --font-titulo: var(--fuente-titulo), "Arial Black", ui-sans-serif, sans-serif;
 
   /* --- Ritmo ------------------------------------------------------------- */
   --ancho: 76rem; /* 1216 px */
@@ -79,14 +82,19 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Titulares: pesados y apretados. Sobre blanco eso es lo que da carácter. */
+  /* Titulares en Unbounded: anchos y pesados, con un poco menos de aire
+     entre letras. Una palabra larga en un celular angosto se parte con guion
+     antes que empujar la página hacia los lados. */
   h1,
   h2,
   h3 {
-    font-weight: 800;
-    letter-spacing: -0.035em;
-    line-height: 0.98;
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   /* Los párrafos no se equilibran, se acortan: pretty evita líneas huérfanas. */
@@ -102,7 +110,7 @@
 
   /* Foco visible y del color de la marca, sin matar el estilo del navegador. */
   :focus-visible {
-    outline: 2px solid var(--color-rojo);
+    outline: 2px solid var(--color-azul);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -232,7 +240,7 @@
     transform: scaleY(1);
   }
 
-  /* La tarjeta se levanta, se ilumina y le entra una línea roja por
+  /* La tarjeta se levanta, se ilumina y le entra una línea azul por
      arriba. Para las cuadrículas de "qué incluye" y las tarjetas de plan,
      donde un simple cambio de color no alcanzaba para llamar la atención.
 
@@ -251,7 +259,7 @@
     inset-inline: 0;
     top: 0;
     height: 3px;
-    background: var(--color-rojo);
+    background: var(--color-azul);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 420ms var(--curva);
@@ -260,7 +268,7 @@
   .realza:hover,
   .realza:focus-within {
     transform: translateY(-6px);
-    box-shadow: 0 22px 44px -22px rgb(13 13 13 / 0.34);
+    box-shadow: 0 22px 44px -22px rgb(11 27 63 / 0.34);
     z-index: 2;
   }
 
@@ -280,7 +288,7 @@
     inset-inline: 0;
     bottom: -0.4rem;
     height: 2px;
-    background: var(--color-rojo);
+    background: var(--color-azul);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 320ms var(--curva);

@@ -8,17 +8,20 @@ import type { Idioma } from "@/i18n/idiomas";
  * /src/data/*.es.ts y *.en.ts.
  *
  * EL NOMBRE ─────────────────────────────────────────────────────────────────
- * "NovaWeb" se decidió el 9 de septiembre de 2026 y reemplazó a
- * "Meridiano", que era provisional. Sale de `name` y desde aquí se propaga
- * a todo el sitio en los dos idiomas: títulos, datos estructurados,
- * imágenes de compartir y pie de página.
+ * "CST – Centro de Soluciones Tecnológicas" reemplazó a NovaWeb el 20 de
+ * octubre de 2026 (antes fue "Meridiano", provisional). Sale de `name` y
+ * desde aquí se propaga a todo el sitio en los dos idiomas: títulos, datos
+ * estructurados, imágenes de compartir y pie de página. El brief de la marca
+ * está en brief-cst.md.
  *
- * El logotipo NO sale de aquí: cómo se escribe la marca —NOVA en negrita y
- * WEB normal— vive en src/components/Logo.tsx, porque es dibujo y no dato.
+ * El logotipo NO sale de aquí: el símbolo y cómo se escribe la sigla viven en
+ * src/components/Logo.tsx, porque es dibujo y no dato.
  *
- * `url` y `domain` son el dominio propio, comprado el 20 de septiembre de
- * 2026. Sin `www`: el apex es la dirección oficial. La vieja de Vercel
- * sigue funcionando y lleva aquí.
+ * `url` y `domain` siguen siendo estudionovaweb.com, comprado el 20 de
+ * septiembre de 2026, porque CST todavía no tiene dominio propio. Cuando lo
+ * tenga: cambiar los dos aquí, agregar el dominio nuevo en Vercel y dejar
+ * estudionovaweb.com redirigiendo (301) al nuevo, para no perder lo que
+ * Google ya registró. Sin `www`: el apex es la dirección oficial.
  * ─────────────────────────────────────────────────────────────────────────
  */
 /**
@@ -49,8 +52,8 @@ export const INDEXAR = true;
 export const ANALYTICS_ID = "G-9KZ2BE5W9J";
 
 export const site = {
-  name: "NovaWeb",
-  legalName: "NovaWeb Estudio",
+  name: "CST",
+  legalName: "CST – Centro de Soluciones Tecnológicas",
   url: "https://estudionovaweb.com",
   domain: "estudionovaweb.com",
 
@@ -61,7 +64,8 @@ export const site = {
 
   contact: {
     /** El de la empresa, no el personal: sale en el pie, en contacto y en
-     *  los datos estructurados que lee Google. */
+     *  los datos estructurados que lee Google. Sigue siendo el de NovaWeb
+     *  hasta que CST tenga dominio y correo propios. */
     email: "this.isnovaweb@gmail.com",
     /** Formato internacional sin signos, para el enlace wa.me */
     whatsapp: "573123445330",
@@ -101,8 +105,8 @@ export const site = {
  * Google y los buscadores con IA.
  */
 export const claim: Record<Idioma, string> = {
-  es: "NovaWeb es un estudio de desarrollo web en Bogotá, Colombia, que hace páginas web, tiendas online y rediseños para negocios de Colombia, Latinoamérica y Estados Unidos, con precios publicados desde $900.000 COP.",
-  en: "NovaWeb is a web development studio in Bogotá, Colombia, building websites, online stores and redesigns for businesses in Colombia, Latin America and the United States, with prices published from COP $900,000.",
+  es: "CST – Centro de Soluciones Tecnológicas es un estudio de desarrollo web en Bogotá, Colombia, que hace páginas web, tiendas online y rediseños para negocios de Colombia, Latinoamérica y Estados Unidos, con precios publicados desde $900.000 COP.",
+  en: "CST – Centro de Soluciones Tecnológicas is a web development studio in Bogotá, Colombia, building websites, online stores and redesigns for businesses in Colombia, Latin America and the United States, with prices published from COP $900,000.",
 };
 
 /** Condiciones comerciales. Se muestran tal cual, sin letra chica. */

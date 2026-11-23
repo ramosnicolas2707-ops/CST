@@ -50,9 +50,9 @@ export default async function Page({ params }: Props) {
       <section className="contenedor pt-10 pb-20 md:pt-14 md:pb-28">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] lg:gap-24">
           <div>
-            <h1 className="text-[clamp(2.25rem,6vw,4rem)]">{t.contactoH1}</h1>
+            <h1 className="text-[clamp(1.75rem,5.5vw,3.25rem)]">{t.contactoH1}</h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-grafito">
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-gris">
               {t.contactoIntro}
             </p>
 
@@ -64,7 +64,7 @@ export default async function Page({ params }: Props) {
 
             <dl className="mt-14 grid gap-8 border-t-2 border-tinta pt-8 sm:grid-cols-2">
               <div>
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                   WhatsApp
                 </dt>
                 <dd className="cifra mt-2 text-lg font-bold">
@@ -72,27 +72,27 @@ export default async function Page({ params }: Props) {
                     href={`https://wa.me/${site.contact.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-rojo"
+                    className="hover:text-azul"
                   >
                     {site.contact.whatsappDisplay}
                   </a>
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                   {t.correo}
                 </dt>
                 <dd className="mt-2 font-bold break-all">
                   <a
                     href={`mailto:${site.contact.email}`}
-                    className="hover:text-rojo"
+                    className="hover:text-azul"
                   >
                     {site.contact.email}
                   </a>
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                   {t.dondeEstoy}
                 </dt>
                 <dd className="mt-2 font-bold">
@@ -100,12 +100,12 @@ export default async function Page({ params }: Props) {
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                   {t.horario}
                 </dt>
                 <dd className="mt-2 space-y-1 font-bold leading-snug">
                   <span className="block">{t.horarioBogota}</span>
-                  <span className="block text-sm font-normal text-grafito">
+                  <span className="block text-sm font-normal text-gris">
                     {t.horarioEstadosUnidos}
                   </span>
                 </dd>
@@ -114,18 +114,18 @@ export default async function Page({ params }: Props) {
           </div>
 
           {/* Condiciones comerciales, a la vista y no en letra chica. */}
-          <aside className="h-fit bg-nieve p-8 md:p-10">
+          <aside className="h-fit bg-niebla p-8 md:p-10">
             <h2 className="text-2xl">{t.comoTrabajo}</h2>
             <dl className="mt-8 space-y-7">
               {condiciones[lang].map((c) => (
                 <div key={c.label}>
-                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                     {c.label}
                   </dt>
-                  <dd className="cifra mt-1.5 text-2xl font-extrabold tracking-tight text-rojo">
+                  <dd className="cifra mt-1.5 text-2xl font-extrabold tracking-tight text-azul">
                     {c.value}
                   </dd>
-                  <dd className="mt-2 leading-relaxed text-grafito">
+                  <dd className="mt-2 leading-relaxed text-gris">
                     {c.detail}
                   </dd>
                 </div>
