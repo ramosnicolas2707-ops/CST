@@ -195,3 +195,24 @@ export const conceptos: Concepto[] = [
     duracion: 0.9,
   },
 ];
+
+/**
+ * Versión compacta del 10 · Suave, elegida por Nico el 23-nov-2026.
+ * Misma regla (una sola línea C → S → T) apretada en un cuadrado, para el
+ * favicon y la foto de perfil, donde el logo largo no se lee.
+ */
+export const suaveCompacto: Concepto = {
+  id: "suave-compacto",
+  numero: "10c",
+  nombre: "Suave compacto",
+  idea: "El logo 10 apretado en un cuadrado.",
+  confianza: "",
+  alegria: "",
+  ojo: "Solo para favicon y foto de perfil.",
+  animacion: "La línea se dibuja en 0,7 s.",
+  viewBox: "0 0 140 140",
+  d: "M44 22 H32 Q14 22 14 40 V100 Q14 118 32 118 H80 Q94 118 94 104 V84 Q94 70 80 70 H74 Q60 70 60 56 V36 Q60 22 74 22 H128 H111 V118",
+  grosor: 12,
+  movimiento: "dibujo",
+  duracion: 0.7,
+};
