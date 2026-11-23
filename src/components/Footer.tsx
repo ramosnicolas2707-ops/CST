@@ -68,14 +68,16 @@ export default function Footer({
                   {site.contact.whatsappDisplay}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="break-all transition-colors hover:text-blanco"
-                >
-                  {site.contact.email}
-                </a>
-              </li>
+              {site.contact.email && (
+                <li>
+                  <a
+                    href={`mailto:${site.contact.email}`}
+                    className="break-all transition-colors hover:text-blanco"
+                  >
+                    {site.contact.email}
+                  </a>
+                </li>
+              )}
               <li className="pt-1">
                 {site.address.city}, {site.address.country}
               </li>

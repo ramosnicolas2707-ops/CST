@@ -78,19 +78,21 @@ export default async function Page({ params }: Props) {
                   </a>
                 </dd>
               </div>
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
-                  {t.correo}
-                </dt>
-                <dd className="mt-2 font-bold break-all">
-                  <a
-                    href={`mailto:${site.contact.email}`}
-                    className="hover:text-azul"
-                  >
-                    {site.contact.email}
-                  </a>
-                </dd>
-              </div>
+              {site.contact.email && (
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
+                    {t.correo}
+                  </dt>
+                  <dd className="mt-2 font-bold break-all">
+                    <a
+                      href={`mailto:${site.contact.email}`}
+                      className="hover:text-azul"
+                    >
+                      {site.contact.email}
+                    </a>
+                  </dd>
+                </div>
+              )}
               <div>
                 <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                   {t.dondeEstoy}

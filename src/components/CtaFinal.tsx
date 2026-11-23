@@ -41,12 +41,14 @@ export default function CtaFinal({
             >
               {t.escribemePorWhatsapp}
             </a>
-            <a
-              href={`mailto:${site.contact.email}`}
-              className="text-[0.9375rem] text-white/70 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-blanco"
-            >
-              {t.oPorCorreo}
-            </a>
+            {site.contact.email && (
+              <a
+                href={`mailto:${site.contact.email}`}
+                className="text-[0.9375rem] text-white/70 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-blanco"
+              >
+                {t.oPorCorreo}
+              </a>
+            )}
           </div>
 
           {/* Dos husos horarios: buena parte de quien escribe en inglés está

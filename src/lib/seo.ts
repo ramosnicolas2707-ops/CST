@@ -77,7 +77,8 @@ export function negocioJsonLd(lang: Idioma) {
     legalName: site.legalName,
     description: claim[lang],
     url: absoluta(`/${lang}`),
-    email: site.contact.email,
+    // Sin correo, el campo no sale: Google no acepta un email vacío.
+    ...(site.contact.email && { email: site.contact.email }),
     telephone: site.contact.phone,
     priceRange: "$$",
     currenciesAccepted: "COP, USD",

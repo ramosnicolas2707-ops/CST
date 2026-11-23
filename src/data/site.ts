@@ -8,8 +8,8 @@ import type { Idioma } from "@/i18n/idiomas";
  * /src/data/*.es.ts y *.en.ts.
  *
  * EL NOMBRE ─────────────────────────────────────────────────────────────────
- * "CST – Centro de Soluciones Tecnológicas" reemplazó a NovaWeb el 20 de
- * octubre de 2026 (antes fue "Meridiano", provisional). Sale de `name` y
+ * "CST – Centro de Soluciones Tecnológicas", desde el 20 de octubre de
+ * 2026. Sale de `name` y
  * desde aquí se propaga a todo el sitio en los dos idiomas: títulos, datos
  * estructurados, imágenes de compartir y pie de página. El brief de la marca
  * está en brief-cst.md.
@@ -17,11 +17,11 @@ import type { Idioma } from "@/i18n/idiomas";
  * El logotipo NO sale de aquí: el símbolo y cómo se escribe la sigla viven en
  * src/components/Logo.tsx, porque es dibujo y no dato.
  *
- * `url` y `domain` siguen siendo estudionovaweb.com, comprado el 20 de
- * septiembre de 2026, porque CST todavía no tiene dominio propio. Cuando lo
- * tenga: cambiar los dos aquí, agregar el dominio nuevo en Vercel y dejar
- * estudionovaweb.com redirigiendo (301) al nuevo, para no perder lo que
- * Google ya registró. Sin `www`: el apex es la dirección oficial.
+ * `url` y `domain` son el dominio actual, el único que tiene el sitio hoy.
+ * Cuando haya dominio nuevo: cambiar los dos aquí, agregarlo en Vercel y
+ * dejar el actual redirigiendo (308) al nuevo, para no perder lo que Google
+ * ya registró. Sin `www`: el apex es la dirección oficial. Ver la skill
+ * cst-migracion-dominio.
  * ─────────────────────────────────────────────────────────────────────────
  */
 /**
@@ -64,9 +64,10 @@ export const site = {
 
   contact: {
     /** El de la empresa, no el personal: sale en el pie, en contacto y en
-     *  los datos estructurados que lee Google. Sigue siendo el de NovaWeb
-     *  hasta que CST tenga dominio y correo propios. */
-    email: "this.isnovaweb@gmail.com",
+     *  los datos estructurados que lee Google. Vacío mientras CST no tenga
+     *  correo propio: con "" el sitio esconde todo lo que lo muestra y el
+     *  contacto queda solo por WhatsApp. Ver PENDIENTES.md. */
+    email: "" as string,
     /** Formato internacional sin signos, para el enlace wa.me */
     whatsapp: "573123445330",
     whatsappDisplay: "+57 312 344 5330",
