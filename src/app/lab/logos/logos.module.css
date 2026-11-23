@@ -1,0 +1,75 @@
+/*
+ * Animaciones de los logos. Todas duran menos de 1 s y solo mueven
+ * stroke-dashoffset, transform y opacity.
+ *
+ * El path lleva pathLength="1": así su largo "vale" 1 sin importar el
+ * tamaño, y dibujarlo es pasar el desplazamiento del guion de 1 a 0.
+ */
+
+.trazo {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 0;
+}
+
+.animar .trazo {
+  animation: dibujar var(--dur, 0.9s) cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.animar.pasos .trazo {
+  animation-timing-function: steps(10, end);
+}
+
+.animar.lento .trazo {
+  animation-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.animar.rebote {
+  animation: rebote 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) var(--dur, 0.7s) both;
+  transform-origin: 50% 80%;
+}
+
+.animar .punto {
+  animation: caer 0.35s cubic-bezier(0.34, 1.7, 0.64, 1) var(--dur, 0.9s) both;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+@keyframes dibujar {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rebote {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes caer {
+  from {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animar .trazo,
+  .animar.rebote,
+  .animar .punto {
+    animation: none;
+  }
+}
