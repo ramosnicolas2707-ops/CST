@@ -18,7 +18,6 @@ elegir antes de diseñar el logo definitivo. Las muestras en vivo están en
 | Servicios | Desarrollo web, mantenimiento de sitios, software a la medida y soporte tecnológico |
 | Ciudad | Bogotá, Colombia |
 | Tamaño que queremos aparentar | Un estudio: equipo pequeño, trato directo |
-| Relación con NovaWeb | CST **reemplaza** a NovaWeb. Empezamos de cero |
 
 ### Clientes
 
