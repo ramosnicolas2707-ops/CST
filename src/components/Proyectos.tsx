@@ -30,15 +30,15 @@ function Ficha({
       <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         {/* Ficha del proyecto */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-rojo">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-azul">
             {String(indice + 1).padStart(2, "0")} · {p.servicioLabel}
           </p>
 
-          <h3 className="mt-4 text-[clamp(1.75rem,3.5vw,2.5rem)]">
+          <h3 className="mt-4 text-[clamp(1.5rem,3vw,2rem)]">
             {p.nombre}
           </h3>
 
-          <p className="mt-2 text-sm text-grafito">
+          <p className="mt-2 text-sm text-gris">
             {p.sector} · {p.ciudad} · {p.anio}
           </p>
 
@@ -46,13 +46,13 @@ function Ficha({
 
           <div className="mt-8 space-y-6">
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+              <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                 {t.elProblema}
               </h4>
-              <p className="mt-2 leading-relaxed text-grafito">{p.problema}</p>
+              <p className="mt-2 leading-relaxed text-gris">{p.problema}</p>
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+              <h4 className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                 {t.queLeHice}
               </h4>
               <p className="mt-2 leading-relaxed">{p.solucion}</p>
@@ -62,7 +62,7 @@ function Ficha({
           <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-filete pt-6">
             {p.datos.map((d) => (
               <div key={d.label}>
-                <dt className="text-[0.6875rem] font-bold uppercase leading-tight tracking-[0.1em] text-grafito">
+                <dt className="text-[0.6875rem] font-bold uppercase leading-tight tracking-[0.1em] text-gris">
                   {d.label}
                 </dt>
                 <dd className="cifra mt-1.5 font-extrabold tracking-tight">
@@ -76,7 +76,7 @@ function Ficha({
             {p.stack.map((tec) => (
               <span
                 key={tec}
-                className="bg-nieve px-3 py-1.5 text-xs font-semibold text-grafito"
+                className="bg-niebla px-3 py-1.5 text-xs font-semibold text-gris"
               >
                 {tec}
               </span>
@@ -88,7 +88,7 @@ function Ficha({
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 font-bold tracking-tight text-rojo underline decoration-2 underline-offset-4 hover:text-tinta"
+              className="mt-8 inline-flex items-center gap-2 font-bold tracking-tight text-azul underline decoration-2 underline-offset-4 hover:text-tinta"
             >
               {t.verSitioEnVivo}
               <span aria-hidden="true">→</span>
@@ -109,7 +109,7 @@ function Ficha({
               sizes="(min-width: 1024px) 60vw, 100vw"
               className="w-full border border-filete"
             />
-            <figcaption className="mt-3 text-sm text-grafito">
+            <figcaption className="mt-3 text-sm text-gris">
               {principal.pie}
             </figcaption>
           </figure>
@@ -127,7 +127,7 @@ function Ficha({
                     sizes="(min-width: 640px) 30vw, 100vw"
                     className="w-full border border-filete"
                   />
-                  <figcaption className="mt-2.5 text-sm text-grafito">
+                  <figcaption className="mt-2.5 text-sm text-gris">
                     {c.pie}
                   </figcaption>
                 </figure>

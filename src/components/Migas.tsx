@@ -11,7 +11,7 @@ export default function Migas({
 }) {
   return (
     <nav aria-label={etiqueta} className="contenedor pt-28 md:pt-32">
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-grafito">
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gris">
         {items.map((item, i) => {
           const ultimo = i === items.length - 1;
           return (

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Logo CST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Unbounded:wght@700&display=swap">
+<style>
+/* Hoja de marca: secciones apiladas, cada una con una grilla de piezas sobre su fondo de uso */
+:root {
+  --azul: #2F5BFF; --amarillo: #FFC21A; --tinta: #0B1B3F; --niebla: #F4F6FF;
+  --gris: #5B6680; --oscuro: #0A1330; --linea: #DCE2F7; --blanco: #FFFFFF;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--niebla); color: var(--tinta);
+  font: 400 1rem/1.6 "Instrument Sans", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { padding-block: 48px 24px; display: grid; gap: 12px; }
+h1, h2 { font-family: "Unbounded", "Arial Black", sans-serif; font-weight: 700; margin: 0; letter-spacing: -0.01em; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: 1.25rem; }
+p { margin: 0; max-width: 64ch; text-wrap: pretty; }
+.muted { color: var(--gris); }
+section { padding-block: 32px; border-top: 1px solid var(--linea); display: grid; gap: 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+.lienzo { border-radius: 16px; padding: 28px; display: grid; place-items: center; min-height: 180px; border: 1px solid var(--linea); }
+.lienzo img { max-width: 100%; height: auto; display: block; }
+.claro { background: var(--blanco); }
+.niebla { background: var(--niebla); }
+.azul { background: var(--azul); border-color: var(--azul); }
+.oscuro { background: var(--oscuro); border-color: var(--oscuro); }
+.amarillo { background: var(--amarillo); border-color: var(--amarillo); }
+figcaption { font-size: 0.875rem; line-height: 1.45; color: var(--gris); }
+figcaption b { color: var(--tinta); font-weight: 600; }
+code { font: 600 0.8125rem/1 ui-monospace, "Cascadia Code", Consolas, monospace; background: var(--blanco); border: 1px solid var(--linea); padding: 2px 6px; border-radius: 6px; overflow-wrap: anywhere; }
+.tamanos { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 22px; }
+.tamanos figure { justify-items: start; }
+.regla { position: relative; display: inline-block; outline: 2px dashed var(--azul); outline-offset: 0; }
+.no { position: relative; }
+.no::after { content: "✕"; position: absolute; top: 10px; right: 12px; width: 28px; height: 28px; border-radius: 50%; background: #B3261E; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; }
+.estirado img { transform: scaleX(1.45); }
+.rotado img { transform: rotate(-12deg); }
+.sombra img { filter: drop-shadow(6px 8px 0 #FF7A1A); }
+.cambio img { filter: hue-rotate(110deg); }
+ul.lista { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 70ch; }
+footer { padding-block: 32px 64px; }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <h1>Logo CST</h1>
+  <p class="muted">Ruta A · Señal. Versión final 1.0, 20 de octubre de 2026. Las letras están convertidas a trazos: los archivos se ven igual en cualquier computador, sin instalar fuentes.</p>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Versiones principales</h2>
+    <div class="grid">
+      <figure>
+        <div class="lienzo claro"><img src="svg/cst-horizontal-color.svg" alt="Logo CST horizontal a color" width="380"></div>
+        <figcaption><b>Horizontal.</b> La versión principal: web, encabezados, documentos.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro"><img src="svg/cst-vertical-color.svg" alt="Logo CST vertical a color" width="220"></div>
+        <figcaption><b>Vertical.</b> Para espacios cuadrados o altos: portada de un PDF, una pieza de Instagram.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro"><img src="svg/cst-compacto-color.svg" alt="Símbolo y sigla CST" width="260"></div>
+        <figcaption><b>Compacto.</b> Símbolo + CST, sin el nombre largo. Para tamaños pequeños y el menú del sitio.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro"><img src="svg/cst-simbolo-color.svg" alt="Símbolo de CST" width="140"></div>
+        <figcaption><b>Símbolo.</b> Solo cuando la marca ya está presente cerca o el espacio es mínimo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sobre fondos</h2>
+    <div class="grid">
+      <figure>
+        <div class="lienzo niebla"><img src="svg/cst-horizontal-color.svg" alt="Logo a color sobre fondo Niebla" width="340"></div>
+        <figcaption><b>Color</b> sobre blanco o Niebla <code>#F4F6FF</code>.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo azul"><img src="svg/cst-horizontal-negativo.svg" alt="Logo en negativo sobre azul" width="340"></div>
+        <figcaption><b>Negativo</b> sobre Azul Señal <code>#2F5BFF</code>.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo oscuro"><img src="svg/cst-horizontal-negativo.svg" alt="Logo en negativo sobre fondo oscuro" width="340"></div>
+        <figcaption><b>Negativo</b> sobre fondo oscuro <code>#0A1330</code> o fotos oscuras.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo amarillo"><img src="svg/cst-horizontal-una-tinta-oscura.svg" alt="Logo a una tinta oscura sobre amarillo" width="340"></div>
+        <figcaption><b>Una tinta oscura</b> sobre amarillo o colores claros donde el azul no contrasta.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro"><img src="svg/cst-horizontal-una-tinta-oscura.svg" alt="Logo a una tinta oscura sobre blanco" width="340"></div>
+        <figcaption><b>Una tinta oscura</b> para sellos, impresión en blanco y negro o grabados.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo oscuro"><img src="svg/cst-horizontal-una-tinta-blanca.svg" alt="Logo a una tinta blanca sobre fondo oscuro" width="340"></div>
+        <figcaption><b>Una tinta blanca</b> sobre fotos con mucho color, donde el amarillo se perdería.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Redes y navegador</h2>
+    <div class="grid">
+      <figure>
+        <div class="lienzo claro">
+          <div class="tamanos">
+            <img src="svg/cst-perfil-redes.svg" alt="Foto de perfil de CST, 160 px" width="160" style="border-radius:50%">
+            <img src="svg/cst-perfil-redes.svg" alt="Foto de perfil de CST, 72 px" width="72" style="border-radius:50%">
+            <img src="svg/cst-perfil-redes.svg" alt="Foto de perfil de CST, 40 px" width="40" style="border-radius:50%">
+          </div>
+        </div>
+        <figcaption><b>Foto de perfil</b> (<code>png/cst-perfil-redes-1080.png</code>). Cuadrada; Instagram, Facebook, WhatsApp y LinkedIn la recortan en círculo y el símbolo queda adentro.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro">
+          <div class="tamanos">
+            <img src="svg/cst-favicon.svg" alt="Ícono del sitio a 64 px" width="64">
+            <img src="svg/cst-favicon.svg" alt="Ícono del sitio a 32 px" width="32">
+            <img src="svg/cst-favicon.svg" alt="Ícono del sitio a 16 px" width="16">
+          </div>
+        </div>
+        <figcaption><b>Favicon</b>, el ícono de la pestaña del navegador (<code>svg/cst-favicon.svg</code> y PNG de 32, 180 y 512 px).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Espacio de protección y tamaño mínimo</h2>
+    <div class="grid">
+      <figure>
+        <div class="lienzo claro"><span class="regla"><img src="svg/cst-horizontal-color.svg" alt="Logo con su margen de protección marcado" width="340"></span></div>
+        <figcaption>La línea punteada marca el aire que siempre rodea al logo: <b>dos veces el grosor del trazo del símbolo</b>. Ya viene incluido en los archivos, así que no hay que agregar más margen; solo no meter nada dentro.</figcaption>
+      </figure>
+      <figure>
+        <div class="lienzo claro">
+          <div class="tamanos">
+            <figure><img src="svg/cst-horizontal-color.svg" alt="Logo horizontal a 140 px" width="140"><figcaption>Horizontal: 140 px</figcaption></figure>
+            <figure><img src="svg/cst-compacto-color.svg" alt="Logo compacto a 80 px" width="80"><figcaption>Compacto: 80 px</figcaption></figure>
+            <figure><img src="svg/cst-simbolo-color.svg" alt="Símbolo a 24 px" width="24"><figcaption>Símbolo: 24 px</figcaption></figure>
+          </div>
+        </div>
+        <figcaption><b>Tamaños mínimos</b> de ancho en pantalla. Por debajo, el nombre largo no se lee: cambia a la versión compacta o al símbolo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que no se hace</h2>
+    <div class="grid">
+      <figure><div class="lienzo claro no estirado"><img src="svg/cst-compacto-color.svg" alt="Ejemplo incorrecto: logo estirado" width="180"></div><figcaption>Estirarlo o aplastarlo.</figcaption></figure>
+      <figure><div class="lienzo claro no rotado"><img src="svg/cst-compacto-color.svg" alt="Ejemplo incorrecto: logo girado" width="220"></div><figcaption>Girarlo.</figcaption></figure>
+      <figure><div class="lienzo claro no cambio"><img src="svg/cst-compacto-color.svg" alt="Ejemplo incorrecto: colores cambiados" width="220"></div><figcaption>Cambiarle los colores.</figcaption></figure>
+      <figure><div class="lienzo claro no sombra"><img src="svg/cst-compacto-color.svg" alt="Ejemplo incorrecto: logo con sombra" width="220"></div><figcaption>Agregarle sombras, bordes o efectos.</figcaption></figure>
+      <figure><div class="lienzo azul no"><img src="svg/cst-compacto-color.svg" alt="Ejemplo incorrecto: logo a color sobre azul" width="220"></div><figcaption>Usar la versión a color sobre azul: el símbolo desaparece. Ahí va el negativo.</figcaption></figure>
+      <figure><div class="lienzo claro no"><svg width="110" height="110" viewBox="0 0 48 48" role="img" aria-label="Ejemplo incorrecto: punto movido al centro"><path d="M25 7H16a9 9 0 0 0-9 9v16a9 9 0 0 0 9 9h16a9 9 0 0 0 9-9V23" fill="none" stroke="#2F5BFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="5.5" fill="#FFC21A"/></svg></div><figcaption>Quitar o mover el punto amarillo. Siempre va centrado sobre la esquina.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Construcción del símbolo</h2>
+    <ul class="lista">
+      <li>Un cuadrado de esquinas redondeadas con un trazo grueso y puntas redondas.</li>
+      <li>La esquina superior derecha se abre. El punto amarillo se centra sobre la línea del trazo, justo en la mitad de la curva de esa esquina (a 45°).</li>
+      <li>Las dos puntas del trazo quedan a la misma distancia del punto, así el hueco se ve parejo arriba y a la derecha.</li>
+      <li>El punto es un poco más grueso que el trazo para que se lea como un LED encendido, no como un pedazo de la línea.</li>
+      <li>Sigla en Unbounded Bold con un poco de aire entre letras; nombre en Instrument Sans Medium. Ambas fuentes son de Google Fonts con licencia OFL, que permite uso comercial.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p class="muted">Archivos en esta carpeta: <code>svg/</code> para web y diseño (escalan sin perder calidad) y <code>png/</code> para redes, WhatsApp y documentos.</p>
+</footer>
+
+</body>
+</html>

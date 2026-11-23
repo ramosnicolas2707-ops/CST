@@ -1,40 +1,38 @@
 /* =============================================================================
-   LA MARCA — NOVAWEB
+   LA MARCA — CST · Centro de Soluciones Tecnológicas
    =============================================================================
 
    Dos piezas que casi siempre van juntas:
 
-     · <Isotipo>  la N: dos columnas y una diagonal roja.
-     · <Marca>    el isotipo más el nombre escrito. Es lo que va en la barra
-                  de navegación y en el pie.
+     · <Isotipo>  el símbolo: un cuadrado redondeado con la esquina de arriba
+                  a la derecha abierta y un punto amarillo en ella.
+     · <Marca>    el isotipo más la sigla escrita. Es lo que va en la barra de
+                  navegación y en el pie.
 
    EL LOGOTIPO
-   NOVA en 800 y WEB en 400, todo en mayúsculas y sin espacio entre las dos
-   mitades. El peso es lo único que las separa, y con eso alcanza: la palabra
-   se lee como una sola cosa y aun así se ve dónde termina el nombre y dónde
-   empieza lo que hace.
-
-   No hay 900 cargado en Archivo (ver el layout: 400, 600, 700, 800), y
-   globals.css apaga font-synthesis, así que un 900 se dibujaría como 800 sin
-   avisar. Por eso el peso alto se pide como 800 y no como "black".
+   CST en Unbounded 700, con un poco de aire entre letras (0.04em). En el pie
+   va además el nombre completo, chico y en la letra de texto.
 
    EL ISOTIPO
-   Tres formas rectas en una caja de 40: las dos astas (de 5 a 13 y de 27 a
-   35) y la diagonal que las cruza de esquina a esquina, pintada encima. Sin
-   curvas ni detalles finos, así que aguanta hasta 16 px sin empastarse.
+   Un trazo de 7 sobre un cuadrado de 34 (de 7 a 41) con esquinas de radio 9.
+   La esquina superior derecha se abre, y el punto se centra sobre el eje del
+   trazo justo en la mitad de esa curva (45°). Las dos puntas quedan a la
+   misma distancia del punto, así el hueco se ve parejo arriba y a la derecha.
 
-   Las astas van en currentColor: negras en la barra, blancas en el pie. La
-   diagonal es siempre roja, pero sobre fondo oscuro usa --rojo-claro, porque
-   el rojo de marca sobre negro se apaga (2.6:1).
+   El trazo va en azul sobre claro y en blanco sobre tinta. El punto es
+   siempre amarillo.
 
-   La misma geometría vive en tres lugares más. Si tocas la N, tócala en todos:
-     · src/app/icon.svg   el favicon
-     · src/lib/og.tsx     la imagen para compartir enlaces
-     · Marketing/         las imágenes sueltas del logo y los videos
+   La misma geometría vive en tres lugares más. Si tocas el símbolo, tócalo
+   en todos:
+     · src/app/icon.svg     el favicon
+     · src/lib/og.tsx       la imagen para compartir enlaces
+     · Marketing/cst/logo/  los archivos del logo (SVG y PNG)
    ========================================================================== */
 
-/** La diagonal, de la esquina de arriba a la izquierda a la de abajo a la derecha. */
-const DIAGONAL = "5,5 13,5 35,35 27,35";
+/** El trazo abierto. Va de la punta de arriba a la de la derecha. */
+export const SIMBOLO_TRAZO = "M25 7H16a9 9 0 0 0-9 9v16a9 9 0 0 0 9 9h16a9 9 0 0 0 9-9V23";
+/** El punto, centrado sobre el trazo en la mitad de la esquina. */
+export const SIMBOLO_PUNTO = { cx: 38.364, cy: 9.636, r: 5.5 };
 
 /* ─────────────────────────────────────────────────────────────── ISOTIPO ── */
 
@@ -47,17 +45,20 @@ export function Isotipo({
 }) {
   return (
     <svg
-      viewBox="0 0 40 40"
+      viewBox="3.5 3.5 41 41"
       aria-hidden="true"
       className={className}
       focusable="false"
     >
-      <rect x="5" y="5" width="8" height="30" fill="currentColor" />
-      <rect x="27" y="5" width="8" height="30" fill="currentColor" />
-      <polygon
-        points={DIAGONAL}
-        fill={sobreOscuro ? "var(--color-rojo-claro)" : "var(--color-rojo)"}
+      <path
+        d={SIMBOLO_TRAZO}
+        fill="none"
+        stroke={sobreOscuro ? "var(--color-blanco)" : "var(--color-azul)"}
+        strokeWidth="7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
+      <circle {...SIMBOLO_PUNTO} fill="var(--color-amarillo)" />
     </svg>
   );
 }
@@ -65,30 +66,43 @@ export function Isotipo({
 /* ───────────────────────────────────────────────────────────────── MARCA ── */
 
 /**
- * El logo completo: isotipo y logotipo, en una línea.
+ * El logo: isotipo y sigla, en una línea.
  *
- * El nombre va escrito como texto de verdad y no dentro del SVG. Así lo lee
- * un lector de pantalla, lo encuentra el buscador de la página y se ajusta al
+ * La sigla va escrita como texto de verdad y no dentro del SVG. Así la lee un
+ * lector de pantalla, la encuentra el buscador de la página y se ajusta al
  * tamaño de letra que tenga puesto el visitante.
  */
 export function Marca({
   className = "",
   sobreOscuro = false,
+  completo = false,
 }: {
   className?: string;
-  /** En el pie: astas y nombre en blanco, diagonal en rojo claro. */
+  /** En el pie: trazo y sigla en blanco. */
   sobreOscuro?: boolean;
+  /** Agrega el nombre completo debajo de la sigla. */
+  completo?: boolean;
 }) {
   return (
     <span
-      className={`flex shrink-0 items-center gap-3 text-xl tracking-tight ${
+      className={`flex shrink-0 items-center gap-3 ${
         sobreOscuro ? "text-blanco" : "text-tinta"
       } ${className}`}
     >
       <Isotipo sobreOscuro={sobreOscuro} className="h-9 w-9 shrink-0" />
-      <span>
-        <span className="font-extrabold">NOVA</span>
-        <span className="font-normal">WEB</span>
+      <span className="flex flex-col gap-1">
+        <span className="font-titulo text-[1.375rem] font-bold leading-none tracking-[0.04em]">
+          CST
+        </span>
+        {completo && (
+          <span
+            className={`text-xs leading-none ${
+              sobreOscuro ? "text-white/70" : "text-gris"
+            }`}
+          >
+            Centro de Soluciones Tecnológicas
+          </span>
+        )}
       </span>
     </span>
   );

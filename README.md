@@ -2,10 +2,15 @@
 
 Next.js 15 (App Router) · TypeScript · Tailwind CSS 4 · 100% estático.
 
-> **El nombre es NovaWeb** y vive en una sola variable de `src/data/site.ts`.
-> El logo —la N de dos columnas con diagonal roja y el logotipo NOVA/WEB— está en
-> `src/components/Logo.tsx`. El personaje `<_>` se quitó del sitio el 14 de
-> septiembre de 2026, del hero y de debajo del pie.
+> **El nombre es CST – Centro de Soluciones Tecnológicas**
+> y vive en una sola variable de
+> `src/data/site.ts`. El logo —el cuadrado abierto con el punto amarillo en la
+> esquina y la sigla CST— está en `src/components/Logo.tsx`; los archivos para
+> redes y documentos, en `Marketing/cst/logo/`. La identidad completa (colores,
+> fuentes, reglas) está en `brief-cst.md`.
+>
+> **El dominio sigue siendo `estudionovaweb.com`** hasta que CST tenga uno
+> propio. Ver la nota en `src/data/site.ts` para el cambio.
 
 ---
 
@@ -76,7 +81,7 @@ entran todavía.
 
 | Qué | Dónde |
 |---|---|
-| ~~Nombre definitivo~~ | NovaWeb, decidido el 9 de septiembre de 2026. |
+| ~~Nombre definitivo~~ | CST – Centro de Soluciones Tecnológicas, desde el 20 de octubre de 2026. |
 | ~~Precios de rediseño~~ | Confirmados el 7 de septiembre de 2026: $950.000 y $2.100.000. |
 | **URLs de los proyectos** | `src/data/proyectos.es.ts` y `.en.ts` → campo `url`, hoy en `null` en los dos. Eclipse está protegida con contraseña y Sexta Rueda solo corre en local. |
 | **Catálogo de Sexta Rueda** | Falta agregar esa captura cuando el sitio tenga fotos de producto reales (hoy son cuadros grises). |

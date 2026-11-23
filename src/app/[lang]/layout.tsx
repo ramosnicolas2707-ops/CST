@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Archivo } from "next/font/google";
+import { Instrument_Sans, Unbounded } from "next/font/google";
 import { site, claim, INDEXAR, ANALYTICS_ID } from "@/data/site";
 import { servicios } from "@/data/contenido";
 import { negocioJsonLd, sitioJsonLd } from "@/lib/seo";
@@ -26,11 +26,21 @@ import "../globals.css";
  * idioma. La dirección "/" pelada redirige a "/es" desde next.config.ts.
  */
 
-const archivo = Archivo({
+/**
+ * Las dos letras de la marca (ver brief-cst.md): Instrument Sans para leer y
+ * Unbounded para los títulos y el logo. Las dos son variables, así que un
+ * solo archivo por familia trae todos los pesos.
+ */
+const instrument = Instrument_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--fuente",
-  weight: ["400", "600", "700", "800"],
+});
+
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--fuente-titulo",
 });
 
 /** Las dos versiones se generan al compilar. Cualquier otro idioma es 404. */
@@ -115,7 +125,7 @@ export default async function LayoutIdioma({
     */
     <html
       lang={LOCALE[lang]}
-      className={archivo.variable}
+      className={`${instrument.variable} ${unbounded.variable}`}
       suppressHydrationWarning
     >
       <head>

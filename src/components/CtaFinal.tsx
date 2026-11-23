@@ -22,10 +22,10 @@ export default function CtaFinal({
     <section className="bg-tinta text-blanco">
       <div className="contenedor py-20 md:py-28">
         <div className="max-w-2xl">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-rojo-claro">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-azul-claro">
             {t.siguientePaso}
           </p>
-          <h2 className="text-[clamp(2.25rem,6vw,3.75rem)]">
+          <h2 className="text-[clamp(1.875rem,5vw,3rem)]">
             {titulo ?? t.ctaTitulo}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/70">
@@ -37,16 +37,18 @@ export default function CtaFinal({
               href={whatsapp(mensaje ?? t.waCotizar)}
               target="_blank"
               rel="noopener noreferrer"
-              className="barrido inline-flex bg-rojo px-7 py-4 font-bold tracking-tight text-blanco transition-colors duration-300 [--color-barrido:var(--color-blanco)] hover:text-tinta"
+              className="barrido inline-flex bg-azul px-7 py-4 font-bold tracking-tight text-blanco transition-colors duration-300 [--color-barrido:var(--color-blanco)] hover:text-tinta"
             >
               {t.escribemePorWhatsapp}
             </a>
-            <a
-              href={`mailto:${site.contact.email}`}
-              className="text-[0.9375rem] text-white/70 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-blanco"
-            >
-              {t.oPorCorreo}
-            </a>
+            {site.contact.email && (
+              <a
+                href={`mailto:${site.contact.email}`}
+                className="text-[0.9375rem] text-white/70 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-blanco"
+              >
+                {t.oPorCorreo}
+              </a>
+            )}
           </div>
 
           {/* Dos husos horarios: buena parte de quien escribe en inglés está

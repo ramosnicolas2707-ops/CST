@@ -52,8 +52,8 @@ export default function PaginaServicio({
       <section className="contenedor pt-10 pb-16 md:pt-14 md:pb-24">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
           <div>
-            <h1 className="text-[clamp(2.25rem,6vw,4rem)]">{s.h1}</h1>
-            <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-grafito">
+            <h1 className="text-[clamp(1.75rem,5.5vw,3.25rem)]">{s.h1}</h1>
+            <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-gris">
               {s.intro.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -78,8 +78,8 @@ export default function PaginaServicio({
               debajo de su contenido a menos que uno se lo diga, así que sin
               eso cualquier cifra larga que venga después repite el problema. */}
           <dl className="grid h-fit gap-px bg-filete sm:grid-cols-2 lg:grid-cols-1">
-            <div className="min-w-0 bg-blanco p-6 lg:border-l-2 lg:border-rojo">
-              <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+            <div className="min-w-0 bg-blanco p-6 lg:border-l-2 lg:border-azul">
+              <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                 {t.desde}
               </dt>
               <dd className="mt-2">
@@ -89,8 +89,8 @@ export default function PaginaServicio({
                 />
               </dd>
             </div>
-            <div className="min-w-0 bg-blanco p-6 lg:border-l-2 lg:border-rojo">
-              <dt className="text-xs font-bold uppercase tracking-[0.14em] text-grafito">
+            <div className="min-w-0 bg-blanco p-6 lg:border-l-2 lg:border-azul">
+              <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gris">
                 {t.entrega}
               </dt>
               <dd className="mt-2 font-bold leading-snug">{s.entrega}</dd>
@@ -102,7 +102,7 @@ export default function PaginaServicio({
       {/* ¿Qué necesitas?
           Esta sección no filtra clientes, los orienta. La columna derecha
           manda a cada quien al servicio que sí le resuelve el problema. */}
-      <section className="seccion bg-nieve">
+      <section className="seccion bg-niebla">
         <div className="contenedor">
           <Revelar>
             <TituloSeccion
@@ -125,16 +125,16 @@ export default function PaginaServicio({
                   <li key={item.texto} className="flex gap-3">
                     <span
                       aria-hidden="true"
-                      className="mt-[0.72rem] h-px w-3 shrink-0 bg-grafito"
+                      className="mt-[0.72rem] h-px w-3 shrink-0 bg-gris"
                     />
-                    <span className="text-[0.9375rem] leading-relaxed text-grafito">
+                    <span className="text-[0.9375rem] leading-relaxed text-gris">
                       {item.texto}
                       {item.ir && (
                         <>
                           {" "}
                           <Link
                             href={`/${lang}${item.ir.href}`}
-                            className="font-bold whitespace-nowrap text-rojo underline decoration-2 underline-offset-4 hover:text-tinta"
+                            className="font-bold whitespace-nowrap text-azul underline decoration-2 underline-offset-4 hover:text-tinta"
                           >
                             {item.ir.label} →
                           </Link>
@@ -167,7 +167,7 @@ export default function PaginaServicio({
               <Revelar key={item.title} retraso={i * 50}>
                 <div className="realza h-full bg-blanco p-7">
                   <h3 className="text-lg">{item.title}</h3>
-                  <p className="mt-3 leading-relaxed text-grafito">
+                  <p className="mt-3 leading-relaxed text-gris">
                     {item.detail}
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function PaginaServicio({
       </section>
 
       {/* Cuánto vale */}
-      <section id="planes" className="seccion bg-nieve">
+      <section id="planes" className="seccion bg-niebla">
         <div className="contenedor">
           <Revelar>
             <TituloSeccion
@@ -213,19 +213,19 @@ export default function PaginaServicio({
                     segundo que pregunta todo el mundo. */}
                 <div
                   className={`realza flex h-full flex-col bg-blanco p-8 ${
-                    p.destacado ? "ring-2 ring-inset ring-rojo" : ""
+                    p.destacado ? "ring-2 ring-inset ring-azul" : ""
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="text-xl">{p.name}</h3>
                     {p.destacado && (
-                      <span className="shrink-0 bg-rojo px-2.5 py-1 text-[0.6875rem] font-bold uppercase tracking-wider text-blanco">
+                      <span className="shrink-0 bg-azul px-2.5 py-1 text-[0.6875rem] font-bold uppercase tracking-wider text-blanco">
                         {t.elMasPedido}
                       </span>
                     )}
                   </div>
 
-                  <p className="mt-2.5 leading-relaxed text-grafito">
+                  <p className="mt-2.5 leading-relaxed text-gris">
                     {p.paraQuien}
                   </p>
 
@@ -234,13 +234,13 @@ export default function PaginaServicio({
                       valor={p.price}
                       className="cifra text-[2.5rem] font-extrabold leading-none"
                     />
-                    <span className="text-sm text-grafito">
+                    <span className="text-sm text-gris">
                       {p.billing === "mes" ? t.alMes : t.pagoUnico}
                     </span>
                   </p>
 
-                  <p className="mt-4 inline-flex w-fit items-center gap-2 bg-nieve px-3 py-1.5 text-sm font-bold">
-                    <span aria-hidden="true" className="h-2 w-2 bg-rojo" />
+                  <p className="mt-4 inline-flex w-fit items-center gap-2 bg-niebla px-3 py-1.5 text-sm font-bold">
+                    <span aria-hidden="true" className="h-2 w-2 bg-azul" />
                     {p.entrega}
                   </p>
 
@@ -251,7 +251,7 @@ export default function PaginaServicio({
                   <Boton
                     href={whatsapp(t.waPlan(p.name, s.card, precio(p.price)))}
                     externo
-                    tono={p.destacado ? "rojo" : "linea"}
+                    tono={p.destacado ? "azul" : "linea"}
                     className="mt-8 w-full"
                   >
                     {t.preguntarPorEste}
@@ -280,9 +280,9 @@ export default function PaginaServicio({
               </div>
 
               {s.nota && (
-                <div className="border-l-2 border-rojo pl-6">
+                <div className="border-l-2 border-azul pl-6">
                   <h3 className="mb-3 text-lg">{t.ojoConEsto}</h3>
-                  <p className="leading-relaxed text-grafito">{s.nota}</p>
+                  <p className="leading-relaxed text-gris">{s.nota}</p>
                 </div>
               )}
             </div>

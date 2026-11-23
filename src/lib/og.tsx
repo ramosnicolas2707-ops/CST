@@ -1,11 +1,12 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/site";
+import { SIMBOLO_PUNTO, SIMBOLO_TRAZO } from "@/components/Logo";
 
 /**
  * La imagen que aparece cuando alguien pega un enlace del sitio en WhatsApp,
  * en Instagram o en un chat. Se genera al compilar, una por página.
  *
- * Mismo lenguaje que el sitio: blanco, un bloque rojo y el texto en negro.
+ * Mismo lenguaje que el sitio: blanco, un bloque azul y el texto en tinta.
  * No se cargan fuentes externas a propósito — traer un binario de tipografía
  * en tiempo de build hace que el deploy dependa de que Google esté arriba.
  */
@@ -40,20 +41,32 @@ export function imagenOg({
       >
         {/* Marca */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          {/* El isotipo, la misma N de Logo.tsx. Son solo rectángulos y un
-              polígono, que Satori dibuja sin problema. */}
-          <svg width="64" height="64" viewBox="0 0 40 40">
-            <rect x="5" y="5" width="8" height="30" fill="#0d0d0d" />
-            <rect x="27" y="5" width="8" height="30" fill="#0d0d0d" />
-            <polygon points="5,5 13,5 35,35 27,35" fill="#b00000" />
+          {/* El isotipo, el mismo símbolo de Logo.tsx: un trazo y un
+              círculo, que Satori dibuja sin problema. */}
+          <svg width="64" height="64" viewBox="3.5 3.5 41 41">
+            <path
+              d={SIMBOLO_TRAZO}
+              fill="none"
+              stroke="#2f5bff"
+              strokeWidth="7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <circle {...SIMBOLO_PUNTO} fill="#ffc21a" />
           </svg>
-          {/* NOVA pesado y WEB normal, como en la barra. Los pesos van
-              declarados, pero aquí no se ven: sin fuente propia, Satori cae
-              en la sans del sistema, que trae un solo grosor. Se dejan
-              puestos para el día que esta imagen sí cargue Archivo. */}
-          <div style={{ display: "flex", fontSize: "34px", color: "#0d0d0d" }}>
-            <div style={{ display: "flex", fontWeight: 800 }}>NOVA</div>
-            <div style={{ display: "flex", fontWeight: 400 }}>WEB</div>
+          {/* La sigla. Sin fuente propia, Satori cae en la sans del sistema:
+              el peso y el aire entre letras se acercan a Unbounded sin
+              necesitarla. */}
+          <div
+            style={{
+              display: "flex",
+              fontSize: "38px",
+              fontWeight: 800,
+              letterSpacing: "3px",
+              color: "#0b1b3f",
+            }}
+          >
+            CST
           </div>
         </div>
 
@@ -67,7 +80,7 @@ export function imagenOg({
                 fontWeight: 700,
                 letterSpacing: "4px",
                 textTransform: "uppercase",
-                color: "#b00000",
+                color: "#2f5bff",
                 marginBottom: "24px",
               }}
             >
@@ -81,7 +94,7 @@ export function imagenOg({
               fontWeight: 800,
               letterSpacing: "-3px",
               lineHeight: 1.02,
-              color: "#0d0d0d",
+              color: "#0b1b3f",
               maxWidth: "1000px",
             }}
           >
@@ -95,7 +108,7 @@ export function imagenOg({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            borderTop: "3px solid #0d0d0d",
+            borderTop: "3px solid #0b1b3f",
             paddingTop: "28px",
           }}
         >
@@ -103,7 +116,7 @@ export function imagenOg({
             <div
               style={{
                 display: "flex",
-                backgroundColor: "#b00000",
+                backgroundColor: "#2f5bff",
                 color: "#ffffff",
                 fontSize: "32px",
                 fontWeight: 800,
@@ -113,14 +126,14 @@ export function imagenOg({
               {precio}
             </div>
           ) : (
-            <div style={{ display: "flex", fontSize: "28px", color: "#5c5c5c" }}>
+            <div style={{ display: "flex", fontSize: "28px", color: "#5b6680" }}>
               {site.domain}
             </div>
           )}
 
           {/* Una sola cadena, no {ciudad}, {país}: Satori cuenta cada trozo
               como un hijo y exige display:flex apenas hay más de uno. */}
-          <div style={{ display: "flex", fontSize: "28px", color: "#5c5c5c" }}>
+          <div style={{ display: "flex", fontSize: "28px", color: "#5b6680" }}>
             {`${site.address.city}, ${site.address.country}`}
           </div>
         </div>

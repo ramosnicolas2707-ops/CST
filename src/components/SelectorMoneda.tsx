@@ -55,7 +55,7 @@ export default function SelectorMoneda({
             className={`px-2 py-1 text-xs font-bold uppercase tracking-wider transition-colors ${
               activa
                 ? "bg-tinta text-blanco"
-                : "text-grafito hover:text-tinta"
+                : "text-gris hover:text-tinta"
             }`}
           >
             {m}

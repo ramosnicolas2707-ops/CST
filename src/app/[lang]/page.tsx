@@ -28,8 +28,8 @@ export async function generateMetadata({
     lang,
     title:
       lang === "es"
-        ? "NovaWeb · Páginas web y tiendas online en Colombia"
-        : "NovaWeb · Websites and online stores, built in Colombia",
+        ? "CST · Páginas web y tiendas online en Colombia"
+        : "CST · Websites and online stores, built in Colombia",
     description: claim[lang],
     path: "/",
   });
@@ -71,7 +71,7 @@ export default async function Home({
       <Hero t={t} />
 
       {/* Qué vendo */}
-      <section className="seccion bg-nieve">
+      <section className="seccion bg-niebla">
         <div className="contenedor">
           <Revelar>
             <TituloSeccion
@@ -91,13 +91,13 @@ export default async function Home({
                   href={`/${lang}/servicios/${s.slug}`}
                   className="panel-sube group flex h-full flex-col bg-blanco p-8 transition-colors duration-500 hover:text-blanco md:p-10"
                 >
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-rojo">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-azul">
                     {t.servicio} {String(i + 1).padStart(2, "0")}
                   </p>
 
                   <h3 className="mt-4 text-2xl md:text-3xl">{s.card}</h3>
 
-                  <p className="mt-3 text-lg text-grafito group-hover:text-white/70">
+                  <p className="mt-3 text-lg text-gris group-hover:text-white/70">
                     {s.cardLine}
                   </p>
 
@@ -108,7 +108,7 @@ export default async function Home({
                     </span>
                     <span
                       aria-hidden="true"
-                      className="text-rojo transition-transform group-hover:translate-x-1"
+                      className="text-azul transition-transform group-hover:translate-x-1"
                     >
                       →
                     </span>

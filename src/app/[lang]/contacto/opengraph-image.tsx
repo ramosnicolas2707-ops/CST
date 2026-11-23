@@ -4,7 +4,7 @@ import { esIdioma, paramsDeIdioma, type Idioma } from "@/i18n/idiomas";
 import { textos } from "@/i18n/textos";
 
 export const generateStaticParams = paramsDeIdioma;
-export const alt = "NovaWeb";
+export const alt = "CST – Centro de Soluciones Tecnológicas";
 export const size = tamanoOg;
 export const contentType = tipoOg;
 

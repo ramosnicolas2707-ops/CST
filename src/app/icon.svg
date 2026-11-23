@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <!--
-    FAVICON — la N de NovaWeb, la misma de src/components/Logo.tsx.
+    FAVICON — el símbolo de CST, el mismo de src/components/Logo.tsx y de
+    Marketing/cst/logo/svg/cst-favicon.svg.
 
-    Lleva un cuadro blanco detrás que el logo grande no tiene. Un favicon vive
-    en una pestaña que puede ser clara u oscura según el tema del navegador:
-    sobre una pestaña oscura, las astas negras desaparecerían. El cuadro le
-    garantiza su propio fondo siempre.
+    Va sobre un cuadro azul que el logo grande no tiene. Un favicon vive en
+    una pestaña que puede ser clara u oscura según el tema del navegador; el
+    cuadro le garantiza su propio fondo siempre, y en blanco el trazo se lee
+    en los dos casos.
 
-    Si cambias la N, cámbiala también en Logo.tsx, en src/lib/og.tsx y en Marketing/.
+    Si cambias el símbolo, cámbialo también en Logo.tsx, en src/lib/og.tsx y
+    en Marketing/cst/logo/.
   -->
-  <rect x="0" y="0" width="40" height="40" rx="9" fill="#ffffff"/>
-  <rect x="5" y="5" width="8" height="30" fill="#0d0d0d"/>
-  <rect x="27" y="5" width="8" height="30" fill="#0d0d0d"/>
-  <polygon points="5,5 13,5 35,35 27,35" fill="#b00000"/>
+  <rect width="64" height="64" rx="14" fill="#2F5BFF"/>
+  <g transform="translate(7.27 7.27) scale(1.03)">
+    <path d="M25 7H16a9 9 0 0 0-9 9v16a9 9 0 0 0 9 9h16a9 9 0 0 0 9-9V23" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="38.364" cy="9.636" r="5.5" fill="#FFC21A"/>
+  </g>
 </svg>

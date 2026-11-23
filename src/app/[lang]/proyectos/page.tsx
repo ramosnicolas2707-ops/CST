@@ -42,10 +42,10 @@ export default async function Page({ params }: Props) {
       <Migas items={migas} etiqueta={t.ruta} />
 
       <div className="contenedor pt-10 md:pt-14">
-        <h1 className="max-w-3xl text-[clamp(2.25rem,6vw,4rem)]">
+        <h1 className="max-w-3xl text-[clamp(1.75rem,5.5vw,3.25rem)]">
           {t.proyectosH1(proyectos(lang).length)}
         </h1>
-        <p className="mt-7 max-w-xl text-lg leading-relaxed text-grafito">
+        <p className="mt-7 max-w-xl text-lg leading-relaxed text-gris">
           {t.proyectosIntro}
         </p>
       </div>

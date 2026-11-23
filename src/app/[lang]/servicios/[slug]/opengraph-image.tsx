@@ -10,7 +10,7 @@ export function generateStaticParams() {
   );
 }
 
-export const alt = "NovaWeb";
+export const alt = "CST – Centro de Soluciones Tecnológicas";
 export const size = tamanoOg;
 export const contentType = tipoOg;
 
@@ -24,7 +24,7 @@ export default async function Image({
   const t = textos(lang);
   const s = servicioPorSlug(lang, slug);
 
-  if (!s) return imagenOg({ titulo: "NovaWeb" });
+  if (!s) return imagenOg({ titulo: "CST – Centro de Soluciones Tecnológicas" });
 
   return imagenOg({
     titulo: s.h1,
